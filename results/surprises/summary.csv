@@ -1,0 +1,213 @@
+family,instrument,mode,surprise_category,family_release_count,n,mean_return_pct,median_return_pct,positive_n,negative_n,neutral_n,positive_share_pct,negative_share_pct,neutral_share_pct
+canada: BoC Interest Rate Decision,HSI,closed_at_release,matched,2,2,-0.14798664117863786,-0.14798664117863786,1,1,0,50.0,50.0,0.0
+canada: BoC Interest Rate Decision,NDX,open_at_release,matched,2,2,0.06547975257552019,0.06547975257552019,1,1,0,50.0,50.0,0.0
+canada: BoC Interest Rate Decision,STOXX50E,open_at_release,matched,2,2,0.09511954241743223,0.09511954241743223,1,1,0,50.0,50.0,0.0
+euro zone: CPI (YoY),HSI,closed_at_release,above,4,1,0.3450722798960637,0.3450722798960637,1,0,0,100.0,0.0,0.0
+euro zone: CPI (YoY),HSI,closed_at_release,below,4,1,-1.2579682435987172,-1.2579682435987172,0,1,0,0.0,100.0,0.0
+euro zone: CPI (YoY),HSI,closed_at_release,matched,4,2,0.3412511567170817,0.3412511567170817,1,0,1,50.0,0.0,50.0
+euro zone: CPI (YoY),NDX,closed_at_release,above,4,1,-2.0840732170443244,-2.0840732170443244,0,1,0,0.0,100.0,0.0
+euro zone: CPI (YoY),NDX,closed_at_release,below,4,1,0.21004556296322363,0.21004556296322363,1,0,0,100.0,0.0,0.0
+euro zone: CPI (YoY),NDX,closed_at_release,matched,4,2,0.254666255320457,0.254666255320457,1,1,0,50.0,50.0,0.0
+euro zone: CPI (YoY),STOXX50E,open_at_release,above,4,1,0.051595645730584394,0.051595645730584394,0,0,1,0.0,0.0,100.0
+euro zone: CPI (YoY),STOXX50E,open_at_release,below,4,1,0.19604319259582953,0.19604319259582953,1,0,0,100.0,0.0,0.0
+euro zone: CPI (YoY),STOXX50E,open_at_release,matched,4,2,0.11680537407721125,0.11680537407721125,1,0,1,50.0,0.0,50.0
+euro zone: Deposit Facility Rate,HSI,closed_at_release,matched,2,2,-0.5013765085099706,-0.5013765085099706,1,1,0,50.0,50.0,0.0
+euro zone: Deposit Facility Rate,NDX,closed_at_release,matched,2,2,-0.0018642400964774541,-0.0018642400964774541,1,1,0,50.0,50.0,0.0
+euro zone: Deposit Facility Rate,STOXX50E,open_at_release,matched,2,2,0.19326216459796264,0.19326216459796264,2,0,0,100.0,0.0,0.0
+euro zone: ECB Interest Rate Decision,HSI,closed_at_release,matched,2,2,-0.5013765085099706,-0.5013765085099706,1,1,0,50.0,50.0,0.0
+euro zone: ECB Interest Rate Decision,NDX,closed_at_release,matched,2,2,-0.0018642400964774541,-0.0018642400964774541,1,1,0,50.0,50.0,0.0
+euro zone: ECB Interest Rate Decision,STOXX50E,open_at_release,matched,2,2,0.19326216459796264,0.19326216459796264,2,0,0,100.0,0.0,0.0
+euro zone: ECB Press Conference,HSI,closed_at_release,unknown,2,2,-0.5013765085099706,-0.5013765085099706,1,1,0,50.0,50.0,0.0
+euro zone: ECB Press Conference,NDX,closed_at_release,unknown,2,2,-0.0018642400964774541,-0.0018642400964774541,1,1,0,50.0,50.0,0.0
+euro zone: ECB Press Conference,STOXX50E,open_at_release,unknown,2,2,0.19326216459796264,0.19326216459796264,2,0,0,100.0,0.0,0.0
+germany: German CPI (MoM),HSI,closed_at_release,above,2,1,0.5294869664303814,0.5294869664303814,1,0,0,100.0,0.0,0.0
+germany: German CPI (MoM),HSI,closed_at_release,matched,2,1,0.01426271599864748,0.01426271599864748,0,0,1,0.0,0.0,100.0
+germany: German CPI (MoM),NDX,closed_at_release,above,2,1,-0.22099672795876657,-0.22099672795876657,0,1,0,0.0,100.0,0.0
+germany: German CPI (MoM),NDX,closed_at_release,matched,2,1,0.7336569790246993,0.7336569790246993,1,0,0,100.0,0.0,0.0
+germany: German CPI (MoM),STOXX50E,open_at_release,above,2,1,0.322247655852248,0.322247655852248,1,0,0,100.0,0.0,0.0
+germany: German CPI (MoM),STOXX50E,open_at_release,matched,2,1,-0.04033229213380452,-0.04033229213380452,0,0,1,0.0,0.0,100.0
+japan: GDP (QoQ) (Q3),HSI,closed_at_release,above,2,1,0.3659203577468296,0.3659203577468296,1,0,0,100.0,0.0,0.0
+japan: GDP (QoQ) (Q3),HSI,closed_at_release,matched,2,1,0.34987185662003206,0.34987185662003206,1,0,0,100.0,0.0,0.0
+japan: GDP (QoQ) (Q3),NDX,closed_at_release,above,2,1,-0.4077724849404275,-0.4077724849404275,0,1,0,0.0,100.0,0.0
+japan: GDP (QoQ) (Q3),NDX,closed_at_release,matched,2,1,-1.9967909767068859,-1.9967909767068859,0,1,0,0.0,100.0,0.0
+japan: GDP (QoQ) (Q3),STOXX50E,closed_at_release,above,2,1,0.5343666621821841,0.5343666621821841,1,0,0,100.0,0.0,0.0
+japan: GDP (QoQ) (Q3),STOXX50E,closed_at_release,matched,2,1,-0.20484234976778648,-0.20484234976778648,0,1,0,0.0,100.0,0.0
+united kingdom: BoE Interest Rate Decision,HSI,closed_at_release,matched,2,2,0.2519896361163121,0.2519896361163121,1,1,0,50.0,50.0,0.0
+united kingdom: BoE Interest Rate Decision,NDX,closed_at_release,matched,2,2,0.044631004528927876,0.044631004528927876,1,1,0,50.0,50.0,0.0
+united kingdom: BoE Interest Rate Decision,STOXX50E,open_at_release,matched,2,2,0.09499831252841595,0.09499831252841595,1,0,1,50.0,0.0,50.0
+united states: 10-Year Note Auction,HSI,closed_at_release,unknown,3,3,0.9611754699637857,0.48028006126583644,2,1,0,66.66666666666667,33.333333333333336,0.0
+united states: 10-Year Note Auction,NDX,open_at_release,unknown,3,3,0.05110418567018472,0.09763128254338671,1,1,1,33.333333333333336,33.333333333333336,33.333333333333336
+united states: 10-Year Note Auction,STOXX50E,closed_at_release,unknown,3,3,0.49253545198169046,0.23781978258392572,2,1,0,66.66666666666667,33.333333333333336,0.0
+united states: 30-Year Bond Auction,HSI,closed_at_release,unknown,3,3,-1.0587469079238725,-1.7535675938007529,1,2,0,33.333333333333336,66.66666666666667,0.0
+united states: 30-Year Bond Auction,NDX,open_at_release,unknown,3,3,-0.02418031270909891,-0.2123110510446224,1,2,0,33.333333333333336,66.66666666666667,0.0
+united states: 30-Year Bond Auction,STOXX50E,closed_at_release,unknown,3,3,0.35281181020088886,0.2741238360866483,3,0,0,100.0,0.0,0.0
+united states: ADP Nonfarm Employment Change,HSI,closed_at_release,above,2,1,0.5294869664303814,0.5294869664303814,1,0,0,100.0,0.0,0.0
+united states: ADP Nonfarm Employment Change,HSI,closed_at_release,below,2,1,-1.118581472156499,-1.118581472156499,0,1,0,0.0,100.0,0.0
+united states: ADP Nonfarm Employment Change,NDX,closed_at_release,above,2,1,-0.22099672795876657,-0.22099672795876657,0,1,0,0.0,100.0,0.0
+united states: ADP Nonfarm Employment Change,NDX,closed_at_release,below,2,1,0.9531266696390037,0.9531266696390037,1,0,0,100.0,0.0,0.0
+united states: ADP Nonfarm Employment Change,STOXX50E,open_at_release,above,2,1,0.11777863257966814,0.11777863257966814,1,0,0,100.0,0.0,0.0
+united states: ADP Nonfarm Employment Change,STOXX50E,open_at_release,below,2,1,0.19401687271112242,0.19401687271112242,1,0,0,100.0,0.0,0.0
+united states: Average Hourly Earnings (MoM),HSI,closed_at_release,above,2,2,0.30104979120194614,0.30104979120194614,2,0,0,100.0,0.0,0.0
+united states: Average Hourly Earnings (MoM),NDX,closed_at_release,above,2,2,0.8716181613058317,0.8716181613058317,2,0,0,100.0,0.0,0.0
+united states: Average Hourly Earnings (MoM),STOXX50E,open_at_release,above,2,2,-0.08348423397173677,-0.08348423397173677,0,1,1,0.0,50.0,50.0
+united states: CB Consumer Confidence,HSI,closed_at_release,above,3,1,-0.7432662274535982,-0.7432662274535982,0,1,0,0.0,100.0,0.0
+united states: CB Consumer Confidence,HSI,closed_at_release,below,3,2,0.732155070606777,0.732155070606777,2,0,0,100.0,0.0,0.0
+united states: CB Consumer Confidence,NDX,open_at_release,above,3,1,0.43535928769677923,0.43535928769677923,1,0,0,100.0,0.0,0.0
+united states: CB Consumer Confidence,NDX,open_at_release,below,3,2,0.02174737245294045,0.02174737245294045,0,0,2,0.0,0.0,100.0
+united states: CB Consumer Confidence,STOXX50E,open_at_release,above,3,1,-0.1510723183975049,-0.1510723183975049,0,1,0,0.0,100.0,0.0
+united states: CB Consumer Confidence,STOXX50E,open_at_release,below,3,2,-0.3360745511303831,-0.3360745511303831,0,2,0,0.0,100.0,0.0
+united states: CPI (MoM),HSI,closed_at_release,above,3,1,-2.329563312426997,-2.329563312426997,0,1,0,0.0,100.0,0.0
+united states: CPI (MoM),HSI,closed_at_release,matched,3,2,-0.03126494017953729,-0.03126494017953729,1,1,0,50.0,50.0,0.0
+united states: CPI (MoM),NDX,closed_at_release,above,3,1,-0.12104392667116048,-0.12104392667116048,0,1,0,0.0,100.0,0.0
+united states: CPI (MoM),NDX,closed_at_release,matched,3,2,0.5649674738162191,0.5649674738162191,1,1,0,50.0,50.0,0.0
+united states: CPI (MoM),STOXX50E,open_at_release,above,3,1,-0.5568650883268077,-0.5568650883268077,0,1,0,0.0,100.0,0.0
+united states: CPI (MoM),STOXX50E,open_at_release,matched,3,2,0.0030350507601029225,0.0030350507601029225,1,1,0,50.0,50.0,0.0
+united states: CPI (YoY),HSI,closed_at_release,above,3,1,-2.329563312426997,-2.329563312426997,0,1,0,0.0,100.0,0.0
+united states: CPI (YoY),HSI,closed_at_release,matched,3,2,-0.03126494017953729,-0.03126494017953729,1,1,0,50.0,50.0,0.0
+united states: CPI (YoY),NDX,closed_at_release,above,3,1,-0.12104392667116048,-0.12104392667116048,0,1,0,0.0,100.0,0.0
+united states: CPI (YoY),NDX,closed_at_release,matched,3,2,0.5649674738162191,0.5649674738162191,1,1,0,50.0,50.0,0.0
+united states: CPI (YoY),STOXX50E,open_at_release,above,3,1,-0.5568650883268077,-0.5568650883268077,0,1,0,0.0,100.0,0.0
+united states: CPI (YoY),STOXX50E,open_at_release,matched,3,2,0.0030350507601029225,0.0030350507601029225,1,1,0,50.0,50.0,0.0
+united states: Chicago PMI,HSI,closed_at_release,below,3,2,0.5241455016856023,0.5241455016856023,2,0,0,100.0,0.0,0.0
+united states: Chicago PMI,NDX,open_at_release,below,3,3,-0.18640167788877005,-0.05370622235610911,1,1,1,33.333333333333336,33.333333333333336,33.333333333333336
+united states: Chicago PMI,STOXX50E,open_at_release,below,3,3,-0.1298448927650482,-0.1715399742945545,1,2,0,33.333333333333336,66.66666666666667,0.0
+united states: Core CPI (MoM),HSI,closed_at_release,above,3,1,-2.329563312426997,-2.329563312426997,0,1,0,0.0,100.0,0.0
+united states: Core CPI (MoM),HSI,closed_at_release,matched,3,2,-0.03126494017953729,-0.03126494017953729,1,1,0,50.0,50.0,0.0
+united states: Core CPI (MoM),NDX,closed_at_release,above,3,1,-0.12104392667116048,-0.12104392667116048,0,1,0,0.0,100.0,0.0
+united states: Core CPI (MoM),NDX,closed_at_release,matched,3,2,0.5649674738162191,0.5649674738162191,1,1,0,50.0,50.0,0.0
+united states: Core CPI (MoM),STOXX50E,open_at_release,above,3,1,-0.5568650883268077,-0.5568650883268077,0,1,0,0.0,100.0,0.0
+united states: Core CPI (MoM),STOXX50E,open_at_release,matched,3,2,0.0030350507601029225,0.0030350507601029225,1,1,0,50.0,50.0,0.0
+united states: Core PCE Price Index (MoM),HSI,closed_at_release,below,3,1,0.25873035714143455,0.25873035714143455,1,0,0,100.0,0.0,0.0
+united states: Core PCE Price Index (MoM),HSI,closed_at_release,matched,3,2,-0.3886970191501693,-0.3886970191501693,1,1,0,50.0,50.0,0.0
+united states: Core PCE Price Index (MoM),NDX,closed_at_release,below,3,1,-0.07248967892061753,-0.07248967892061753,0,0,1,0.0,0.0,100.0
+united states: Core PCE Price Index (MoM),NDX,closed_at_release,matched,3,1,-2.0840732170443244,-2.0840732170443244,0,1,0,0.0,100.0,0.0
+united states: Core PCE Price Index (MoM),NDX,open_at_release,matched,3,1,-0.903218662646954,-0.903218662646954,0,1,0,0.0,100.0,0.0
+united states: Core PCE Price Index (MoM),STOXX50E,open_at_release,below,3,1,0.21441706450107129,0.21441706450107129,1,0,0,100.0,0.0,0.0
+united states: Core PCE Price Index (MoM),STOXX50E,open_at_release,matched,3,2,-0.16599605829765718,-0.16599605829765718,0,1,1,0.0,50.0,50.0
+united states: Core PCE Price Index (YoY),HSI,closed_at_release,above,3,1,0.3450722798960637,0.3450722798960637,1,0,0,100.0,0.0,0.0
+united states: Core PCE Price Index (YoY),HSI,closed_at_release,below,3,1,0.25873035714143455,0.25873035714143455,1,0,0,100.0,0.0,0.0
+united states: Core PCE Price Index (YoY),HSI,closed_at_release,matched,3,1,-1.1224663181964023,-1.1224663181964023,0,1,0,0.0,100.0,0.0
+united states: Core PCE Price Index (YoY),NDX,closed_at_release,above,3,1,-2.0840732170443244,-2.0840732170443244,0,1,0,0.0,100.0,0.0
+united states: Core PCE Price Index (YoY),NDX,closed_at_release,below,3,1,-0.07248967892061753,-0.07248967892061753,0,0,1,0.0,0.0,100.0
+united states: Core PCE Price Index (YoY),NDX,open_at_release,matched,3,1,-0.903218662646954,-0.903218662646954,0,1,0,0.0,100.0,0.0
+united states: Core PCE Price Index (YoY),STOXX50E,open_at_release,above,3,1,-0.24225299720578297,-0.24225299720578297,0,1,0,0.0,100.0,0.0
+united states: Core PCE Price Index (YoY),STOXX50E,open_at_release,below,3,1,0.21441706450107129,0.21441706450107129,1,0,0,100.0,0.0,0.0
+united states: Core PCE Price Index (YoY),STOXX50E,open_at_release,matched,3,1,-0.0897391193895314,-0.0897391193895314,0,0,1,0.0,0.0,100.0
+united states: Core Retail Sales (MoM),HSI,closed_at_release,above,3,1,0.7508145767808116,0.7508145767808116,1,0,0,100.0,0.0,0.0
+united states: Core Retail Sales (MoM),HSI,closed_at_release,below,3,2,0.9852798528390828,0.9852798528390828,2,0,0,100.0,0.0,0.0
+united states: Core Retail Sales (MoM),NDX,closed_at_release,above,3,1,0.4848869760446517,0.4848869760446517,1,0,0,100.0,0.0,0.0
+united states: Core Retail Sales (MoM),NDX,closed_at_release,below,3,2,-1.4388506799706713,-1.4388506799706713,0,2,0,0.0,100.0,0.0
+united states: Core Retail Sales (MoM),STOXX50E,open_at_release,above,3,1,0.131263286679828,0.131263286679828,1,0,0,100.0,0.0,0.0
+united states: Core Retail Sales (MoM),STOXX50E,open_at_release,below,3,2,-0.16311519713183562,-0.16311519713183562,0,1,1,0.0,50.0,50.0
+united states: Crude Oil Inventories,HSI,closed_at_release,above,12,6,0.43629673187386975,0.24385796896525536,4,2,0,66.66666666666667,33.333333333333336,0.0
+united states: Crude Oil Inventories,HSI,closed_at_release,below,12,6,-0.17063578572807012,-0.031534233613356166,3,3,0,50.0,50.0,0.0
+united states: Crude Oil Inventories,NDX,open_at_release,above,12,6,-0.06277766030859384,-0.051956794458712915,2,3,1,33.333333333333336,50.0,16.666666666666668
+united states: Crude Oil Inventories,NDX,open_at_release,below,12,6,0.13121542011285128,0.13025762573068977,3,1,2,50.0,16.666666666666668,33.333333333333336
+united states: Crude Oil Inventories,STOXX50E,closed_at_release,below,12,1,-0.13122421775475512,-0.13122421775475512,0,1,0,0.0,100.0,0.0
+united states: Crude Oil Inventories,STOXX50E,open_at_release,below,12,1,0.12582173732098578,0.12582173732098578,1,0,0,100.0,0.0,0.0
+united states: Durable Goods Orders (MoM),HSI,closed_at_release,above,3,2,-0.6250267614638316,-0.6250267614638316,0,2,0,0.0,100.0,0.0
+united states: Durable Goods Orders (MoM),HSI,closed_at_release,below,3,1,1.205009657844247,1.205009657844247,1,0,0,100.0,0.0,0.0
+united states: Durable Goods Orders (MoM),NDX,closed_at_release,above,3,2,0.34154658292863116,0.34154658292863116,1,1,0,50.0,50.0,0.0
+united states: Durable Goods Orders (MoM),NDX,closed_at_release,below,3,1,-0.4554103058524772,-0.4554103058524772,0,1,0,0.0,100.0,0.0
+united states: Durable Goods Orders (MoM),STOXX50E,open_at_release,above,3,2,0.15537632296114265,0.15537632296114265,2,0,0,100.0,0.0,0.0
+united states: Durable Goods Orders (MoM),STOXX50E,open_at_release,below,3,1,-0.04751300406115044,-0.04751300406115044,0,0,1,0.0,0.0,100.0
+united states: Existing Home Sales,HSI,closed_at_release,above,3,2,-0.2112429248706416,-0.2112429248706416,0,2,0,0.0,100.0,0.0
+united states: Existing Home Sales,HSI,closed_at_release,below,3,1,-0.7762533436231122,-0.7762533436231122,0,1,0,0.0,100.0,0.0
+united states: Existing Home Sales,NDX,open_at_release,above,3,2,-0.27491466566328393,-0.27491466566328393,0,2,0,0.0,100.0,0.0
+united states: Existing Home Sales,NDX,open_at_release,below,3,1,-0.7079617248424097,-0.7079617248424097,0,1,0,0.0,100.0,0.0
+united states: Existing Home Sales,STOXX50E,open_at_release,above,3,2,0.2272210399652863,0.2272210399652863,1,0,1,50.0,0.0,50.0
+united states: Existing Home Sales,STOXX50E,open_at_release,below,3,1,0.04477702161178598,0.04477702161178598,0,0,1,0.0,0.0,100.0
+united states: FOMC Meeting Minutes,HSI,closed_at_release,unknown,2,2,1.7583481707238557,1.7583481707238557,2,0,0,100.0,0.0,0.0
+united states: FOMC Meeting Minutes,NDX,open_at_release,unknown,2,2,0.029587921547535867,0.029587921547535867,0,0,2,0.0,0.0,100.0
+united states: FOMC Meeting Minutes,STOXX50E,closed_at_release,unknown,2,2,-0.4527616725299998,-0.4527616725299998,0,2,0,0.0,100.0,0.0
+united states: FOMC Press Conference,HSI,closed_at_release,unknown,2,2,-0.23458711701357382,-0.23458711701357382,1,1,0,50.0,50.0,0.0
+united states: FOMC Press Conference,NDX,open_at_release,unknown,2,2,-0.7109561016509172,-0.7109561016509172,1,1,0,50.0,50.0,0.0
+united states: FOMC Press Conference,STOXX50E,closed_at_release,unknown,2,2,-0.8171979862231782,-0.8171979862231782,0,2,0,0.0,100.0,0.0
+united states: FOMC Statement,HSI,closed_at_release,unknown,2,2,-0.23458711701357382,-0.23458711701357382,1,1,0,50.0,50.0,0.0
+united states: FOMC Statement,NDX,open_at_release,unknown,2,2,-1.1303321024133786,-1.1303321024133786,1,1,0,50.0,50.0,0.0
+united states: FOMC Statement,STOXX50E,closed_at_release,unknown,2,2,-0.8171979862231782,-0.8171979862231782,0,2,0,0.0,100.0,0.0
+united states: Fed Chair Powell Speaks,HSI,closed_at_release,unknown,2,2,-0.3843548077682335,-0.3843548077682335,1,1,0,50.0,50.0,0.0
+united states: Fed Chair Powell Speaks,NDX,open_at_release,unknown,2,1,0.23587712502581848,0.23587712502581848,1,0,0,100.0,0.0,0.0
+united states: Fed Chair Powell Speaks,STOXX50E,closed_at_release,unknown,2,2,0.16905785050630462,0.16905785050630462,1,1,0,50.0,50.0,0.0
+united states: Fed Interest Rate Decision,HSI,closed_at_release,matched,2,2,-0.23458711701357382,-0.23458711701357382,1,1,0,50.0,50.0,0.0
+united states: Fed Interest Rate Decision,NDX,open_at_release,matched,2,2,-1.1303321024133786,-1.1303321024133786,1,1,0,50.0,50.0,0.0
+united states: Fed Interest Rate Decision,STOXX50E,closed_at_release,matched,2,2,-0.8171979862231782,-0.8171979862231782,0,2,0,0.0,100.0,0.0
+united states: GDP (QoQ) (Q3),HSI,closed_at_release,above,3,1,-0.2848147373389454,-0.2848147373389454,0,1,0,0.0,100.0,0.0
+united states: GDP (QoQ) (Q3),HSI,closed_at_release,below,3,1,0.5294869664303814,0.5294869664303814,1,0,0,100.0,0.0,0.0
+united states: GDP (QoQ) (Q3),HSI,closed_at_release,matched,3,1,-1.1224663181964023,-1.1224663181964023,0,1,0,0.0,100.0,0.0
+united states: GDP (QoQ) (Q3),NDX,closed_at_release,above,3,1,-0.9411412020885244,-0.9411412020885244,0,1,0,0.0,100.0,0.0
+united states: GDP (QoQ) (Q3),NDX,closed_at_release,below,3,1,-0.22099672795876657,-0.22099672795876657,0,1,0,0.0,100.0,0.0
+united states: GDP (QoQ) (Q3),NDX,closed_at_release,matched,3,1,-0.82470168826998,-0.82470168826998,0,1,0,0.0,100.0,0.0
+united states: GDP (QoQ) (Q3),STOXX50E,open_at_release,above,3,1,-0.303245160944876,-0.303245160944876,0,1,0,0.0,100.0,0.0
+united states: GDP (QoQ) (Q3),STOXX50E,open_at_release,below,3,1,0.11777863257966814,0.11777863257966814,1,0,0,100.0,0.0,0.0
+united states: GDP (QoQ) (Q3),STOXX50E,open_at_release,matched,3,1,0.20821208807908492,0.20821208807908492,1,0,0,100.0,0.0,0.0
+united states: ISM Manufacturing PMI,HSI,closed_at_release,above,2,1,-0.5657362952858347,-0.5657362952858347,0,1,0,0.0,100.0,0.0
+united states: ISM Manufacturing PMI,HSI,closed_at_release,below,2,1,0.23617922465706265,0.23617922465706265,1,0,0,100.0,0.0,0.0
+united states: ISM Manufacturing PMI,NDX,open_at_release,above,2,1,0.7131967424390374,0.7131967424390374,1,0,0,100.0,0.0,0.0
+united states: ISM Manufacturing PMI,NDX,open_at_release,below,2,1,1.0191646684101219,1.0191646684101219,1,0,0,100.0,0.0,0.0
+united states: ISM Manufacturing PMI,STOXX50E,open_at_release,above,2,1,0.15611513453159812,0.15611513453159812,1,0,0,100.0,0.0,0.0
+united states: ISM Manufacturing PMI,STOXX50E,open_at_release,below,2,1,0.21920338848393506,0.21920338848393506,1,0,0,100.0,0.0,0.0
+united states: ISM Manufacturing Prices,HSI,closed_at_release,above,2,1,0.23617922465706265,0.23617922465706265,1,0,0,100.0,0.0,0.0
+united states: ISM Manufacturing Prices,HSI,closed_at_release,below,2,1,-0.5657362952858347,-0.5657362952858347,0,1,0,0.0,100.0,0.0
+united states: ISM Manufacturing Prices,NDX,open_at_release,above,2,1,1.0191646684101219,1.0191646684101219,1,0,0,100.0,0.0,0.0
+united states: ISM Manufacturing Prices,NDX,open_at_release,below,2,1,0.7131967424390374,0.7131967424390374,1,0,0,100.0,0.0,0.0
+united states: ISM Manufacturing Prices,STOXX50E,open_at_release,above,2,1,0.21920338848393506,0.21920338848393506,1,0,0,100.0,0.0,0.0
+united states: ISM Manufacturing Prices,STOXX50E,open_at_release,below,2,1,0.15611513453159812,0.15611513453159812,1,0,0,100.0,0.0,0.0
+united states: ISM Non-Manufacturing PMI,HSI,closed_at_release,above,2,1,-0.8541495094528839,-0.8541495094528839,0,1,0,0.0,100.0,0.0
+united states: ISM Non-Manufacturing PMI,HSI,closed_at_release,below,2,1,-1.118581472156499,-1.118581472156499,0,1,0,0.0,100.0,0.0
+united states: ISM Non-Manufacturing PMI,NDX,open_at_release,above,2,1,0.6634038957235688,0.6634038957235688,1,0,0,100.0,0.0,0.0
+united states: ISM Non-Manufacturing PMI,NDX,open_at_release,below,2,1,0.23973575321294405,0.23973575321294405,1,0,0,100.0,0.0,0.0
+united states: ISM Non-Manufacturing PMI,STOXX50E,open_at_release,above,2,1,0.2825040812680424,0.2825040812680424,1,0,0,100.0,0.0,0.0
+united states: ISM Non-Manufacturing PMI,STOXX50E,open_at_release,below,2,1,0.09804717089914036,0.09804717089914036,0,0,1,0.0,0.0,100.0
+united states: ISM Non-Manufacturing Prices,HSI,closed_at_release,above,2,2,-0.9863654908046915,-0.9863654908046915,0,2,0,0.0,100.0,0.0
+united states: ISM Non-Manufacturing Prices,NDX,open_at_release,above,2,2,0.45156982446825644,0.45156982446825644,2,0,0,100.0,0.0,0.0
+united states: ISM Non-Manufacturing Prices,STOXX50E,open_at_release,above,2,2,0.1902756260835914,0.1902756260835914,1,0,1,50.0,0.0,50.0
+united states: Initial Jobless Claims,HSI,closed_at_release,above,12,3,-1.1292946044920444,-1.7535675938007529,1,2,0,33.333333333333336,66.66666666666667,0.0
+united states: Initial Jobless Claims,HSI,closed_at_release,below,12,8,0.0660324310686591,0.10370058374686296,4,4,0,50.0,50.0,0.0
+united states: Initial Jobless Claims,HSI,closed_at_release,matched,12,1,0.7508145767808116,0.7508145767808116,1,0,0,100.0,0.0,0.0
+united states: Initial Jobless Claims,NDX,closed_at_release,above,12,3,-0.1963143452758683,-0.12104392667116048,0,2,1,0.0,66.66666666666667,33.333333333333336
+united states: Initial Jobless Claims,NDX,closed_at_release,below,12,8,-0.37768599940187914,-0.45541989577684294,2,5,1,25.0,62.5,12.5
+united states: Initial Jobless Claims,NDX,closed_at_release,matched,12,1,0.4848869760446517,0.4848869760446517,1,0,0,100.0,0.0,0.0
+united states: Initial Jobless Claims,STOXX50E,closed_at_release,below,12,1,0.6659540617973247,0.6659540617973247,1,0,0,100.0,0.0,0.0
+united states: Initial Jobless Claims,STOXX50E,open_at_release,above,12,3,-0.09992859234395261,0.0018182687788526053,1,1,1,33.333333333333336,33.333333333333336,33.333333333333336
+united states: Initial Jobless Claims,STOXX50E,open_at_release,below,12,7,0.12287772282261031,0.20821208807908492,4,2,1,57.142857142857146,28.571428571428573,14.285714285714286
+united states: Initial Jobless Claims,STOXX50E,open_at_release,matched,12,1,0.131263286679828,0.131263286679828,1,0,0,100.0,0.0,0.0
+united states: JOLTS Job Openings,HSI,closed_at_release,above,2,1,0.006539431134888753,0.006539431134888753,0,0,1,0.0,0.0,100.0
+united states: JOLTS Job Openings,HSI,closed_at_release,below,2,1,-0.7432662274535982,-0.7432662274535982,0,1,0,0.0,100.0,0.0
+united states: JOLTS Job Openings,NDX,open_at_release,above,2,1,0.44614184628362075,0.44614184628362075,1,0,0,100.0,0.0,0.0
+united states: JOLTS Job Openings,NDX,open_at_release,below,2,1,0.43535928769677923,0.43535928769677923,1,0,0,100.0,0.0,0.0
+united states: JOLTS Job Openings,STOXX50E,open_at_release,above,2,1,0.16943192963037032,0.16943192963037032,1,0,0,100.0,0.0,0.0
+united states: JOLTS Job Openings,STOXX50E,open_at_release,below,2,1,-0.1510723183975049,-0.1510723183975049,0,1,0,0.0,100.0,0.0
+united states: New Home Sales,HSI,closed_at_release,above,3,1,0.9041082144640054,0.9041082144640054,1,0,0,100.0,0.0,0.0
+united states: New Home Sales,HSI,closed_at_release,below,3,2,0.732155070606777,0.732155070606777,2,0,0,100.0,0.0,0.0
+united states: New Home Sales,NDX,open_at_release,above,3,1,-0.010368530658300124,-0.010368530658300124,0,0,1,0.0,0.0,100.0
+united states: New Home Sales,NDX,open_at_release,below,3,2,0.02174737245294045,0.02174737245294045,0,0,2,0.0,0.0,100.0
+united states: New Home Sales,STOXX50E,open_at_release,above,3,1,-0.42134436049429125,-0.42134436049429125,0,1,0,0.0,100.0,0.0
+united states: New Home Sales,STOXX50E,open_at_release,below,3,2,-0.3360745511303831,-0.3360745511303831,0,2,0,0.0,100.0,0.0
+united states: Nonfarm Payrolls,HSI,closed_at_release,above,2,1,0.3659203577468296,0.3659203577468296,1,0,0,100.0,0.0,0.0
+united states: Nonfarm Payrolls,HSI,closed_at_release,below,2,1,0.23617922465706265,0.23617922465706265,1,0,0,100.0,0.0,0.0
+united states: Nonfarm Payrolls,NDX,closed_at_release,above,2,1,0.7708606276764396,0.7708606276764396,1,0,0,100.0,0.0,0.0
+united states: Nonfarm Payrolls,NDX,closed_at_release,below,2,1,0.9723756949352238,0.9723756949352238,1,0,0,100.0,0.0,0.0
+united states: Nonfarm Payrolls,STOXX50E,open_at_release,above,2,1,-0.15074050131972383,-0.15074050131972383,0,1,0,0.0,100.0,0.0
+united states: Nonfarm Payrolls,STOXX50E,open_at_release,below,2,1,-0.016227966623749698,-0.016227966623749698,0,0,1,0.0,0.0,100.0
+united states: PPI (MoM),HSI,closed_at_release,above,3,1,-1.7535675938007529,-1.7535675938007529,0,1,0,0.0,100.0,0.0
+united states: PPI (MoM),HSI,closed_at_release,below,3,1,-2.329563312426997,-2.329563312426997,0,1,0,0.0,100.0,0.0
+united states: PPI (MoM),HSI,closed_at_release,matched,3,1,0.34987185662003206,0.34987185662003206,1,0,0,100.0,0.0,0.0
+united states: PPI (MoM),NDX,closed_at_release,above,3,1,-0.4886154562376066,-0.4886154562376066,0,1,0,0.0,100.0,0.0
+united states: PPI (MoM),NDX,closed_at_release,below,3,1,0.24583417609636005,0.24583417609636005,1,0,0,100.0,0.0,0.0
+united states: PPI (MoM),NDX,closed_at_release,matched,3,1,-0.36193767648656777,-0.36193767648656777,0,1,0,0.0,100.0,0.0
+united states: PPI (MoM),STOXX50E,open_at_release,above,3,1,0.25526104251609727,0.25526104251609727,1,0,0,100.0,0.0,0.0
+united states: PPI (MoM),STOXX50E,open_at_release,below,3,1,0.30450717133183586,0.30450717133183586,1,0,0,100.0,0.0,0.0
+united states: PPI (MoM),STOXX50E,open_at_release,matched,3,1,0.354231841278807,0.354231841278807,1,0,0,100.0,0.0,0.0
+united states: Philadelphia Fed Manufacturing Index,HSI,closed_at_release,above,3,1,0.7508145767808116,0.7508145767808116,1,0,0,100.0,0.0,0.0
+united states: Philadelphia Fed Manufacturing Index,HSI,closed_at_release,below,3,2,-0.2112429248706416,-0.2112429248706416,0,2,0,0.0,100.0,0.0
+united states: Philadelphia Fed Manufacturing Index,NDX,closed_at_release,above,3,1,0.4848869760446517,0.4848869760446517,1,0,0,100.0,0.0,0.0
+united states: Philadelphia Fed Manufacturing Index,NDX,closed_at_release,below,3,2,-0.7450216585778212,-0.7450216585778212,0,2,0,0.0,100.0,0.0
+united states: Philadelphia Fed Manufacturing Index,STOXX50E,open_at_release,above,3,1,0.131263286679828,0.131263286679828,1,0,0,100.0,0.0,0.0
+united states: Philadelphia Fed Manufacturing Index,STOXX50E,open_at_release,below,3,2,-0.03547788342104782,-0.03547788342104782,1,1,0,50.0,50.0,0.0
+united states: Retail Sales (MoM),HSI,closed_at_release,above,3,3,0.907124760819659,0.7508145767808116,3,0,0,100.0,0.0,0.0
+united states: Retail Sales (MoM),NDX,closed_at_release,above,3,3,-0.7976047946322303,-0.8809103832344569,1,2,0,33.333333333333336,66.66666666666667,0.0
+united states: Retail Sales (MoM),STOXX50E,open_at_release,above,3,3,-0.06498903586128107,-0.06003902783559002,1,1,1,33.333333333333336,33.333333333333336,33.333333333333336
+united states: Unemployment Rate,HSI,closed_at_release,matched,2,2,0.30104979120194614,0.30104979120194614,2,0,0,100.0,0.0,0.0
+united states: Unemployment Rate,NDX,closed_at_release,matched,2,2,0.8716181613058317,0.8716181613058317,2,0,0,100.0,0.0,0.0
+united states: Unemployment Rate,STOXX50E,open_at_release,matched,2,2,-0.08348423397173677,-0.08348423397173677,0,1,1,0.0,50.0,50.0

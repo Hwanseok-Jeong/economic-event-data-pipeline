@@ -94,6 +94,42 @@ co-released indicators, different baseline windows, and intervening news prevent
 strong economic conclusions. The main lesson is that market availability changes
 what an “event response” can actually measure.
 
+## Optional: repeated events and forecast surprises
+
+**Does the response to a repeated announcement differ when its reported value
+exceeds, matches, or falls below the forecast?** An optional module answers this
+with supplied historical data; no additional data subscription is required.
+
+Python normalizes numeric values and units; SQL identifies repeated event families,
+classifies forecast surprises, joins session-aware returns, and computes counts,
+means, medians and positive/negative/neutral shares. Open-at-release and closed-at-release
+windows remain separate. Inspect the [observation query](sql/surprise_observations.sql)
+and [summary query](sql/surprise_summary.sql): `JOIN`, `HAVING`, `CASE`, `ROW_NUMBER()`
+and conditional aggregation implement the comparison on SQLite and MySQL 8.
+
+![Forecast comparison from supplied historical data](results/surprises/forecast_comparison.png)
+
+The current snapshot has 41 repeated families; 105/124 event records have comparable
+actual/forecast values and 19 are unknown. For U.S. CPI (MoM), Nasdaq's observed
+return is −0.121% for the above-forecast release (n=1), versus a mean +0.565% for
+matched releases (n=2). Both Fed rate decisions match forecasts, so this snapshot
+cannot compare above/below-forecast Fed decisions. These small groups illustrate
+the comparison; they do not establish a stable surprise-response relationship.
+
+```sh
+# Run after study.py prepare; export CSVs without plotting dependencies:
+python surprise_analysis.py --no-plot
+# Add the comparison image with requirements-report.txt installed:
+python surprise_analysis.py
+# Same SQL on the configured MySQL study database:
+python surprise_analysis.py --db mysql --no-plot --output outputs/mysql_surprises
+```
+
+See [method, coverage and results](results/surprises/README.md). Numeric surprise is
+actual minus forecast, not a good/bad-news label. Unknown values are retained
+separately; historical archive values are not verified as unrevised announcement-time
+vintages. Repeated here means multiple releases in Q4 2024, not a multi-year study.
+
 ## Run the real study
 
 Install `requirements-study.txt` and supply the sourced Yahoo/Investing archives:
@@ -250,6 +286,8 @@ retries, and PostgreSQL deployment. These are future work, not implemented featu
 | `results/real/` | Actual analytical summaries, session chart, and provenance |
 | `results/` | Separate synthetic execution fixture |
 | `study.py` | Yahoo/Investing source normalization and session-aware SQL analysis |
+| `surprise_analysis.py` | Optional repeated-event / forecast-surprise module |
+| `results/surprises/` | Actual optional comparison CSVs, coverage and image |
 | `build_real_report.py` | Actual graphs, findings, and public presentation |
 | `fetch_cash_prices.py` | Yahoo cash-index hourly acquisition |
 | `build_portfolio.py` | Reproducible static results and PDF generator |

@@ -15,6 +15,7 @@
 !/fetch_cash_prices.py
 !/build_real_report.py
 !/build_case_report.py
+!/surprise_analysis.py
 !/requirements-study.txt
 !/sql/
 !/tests/

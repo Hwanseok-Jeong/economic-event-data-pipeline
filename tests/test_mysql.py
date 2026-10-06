@@ -6,6 +6,7 @@ from database import connect
 from pipeline import ROOT, demo, load, response_curve, responses
 from study import session_responses
 from build_case_report import classify
+from test_surprises import sql_fixture
 
 
 @unittest.skipUnless(os.environ.get('MYSQL_INTEGRATION_TEST') == '1', 'MySQL integration database not enabled')
@@ -58,3 +59,9 @@ class MySQLTests(unittest.TestCase):
             self.assertEqual(len(cases),1)
             self.assertEqual(cases[0]['direction'],'all_positive')
             self.assertEqual(cases[0]['increasing_magnitude'],1)
+        with connect('mysql') as connection:
+            rows=sql_fixture(connection)
+            cpi=next(r for r in rows if r['family']=='US: CPI (MoM)' and r['instrument']=='HSI')
+            self.assertEqual(cpi['median_return_pct'],1)
+            self.assertEqual(cpi['mean_return_pct'],2.5)
+            self.assertEqual(len(rows),3)

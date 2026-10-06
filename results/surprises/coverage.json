@@ -1,0 +1,11 @@
+{
+  "event_records": 124,
+  "parse_status_counts": {
+    "comparable": 105,
+    "missing_value": 19
+  },
+  "recurring_families": 41,
+  "recurring_event_records": 121,
+  "valid_observations": 351,
+  "neutral_threshold_pct": 0.1
+}

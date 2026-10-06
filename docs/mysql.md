@@ -35,6 +35,9 @@ detail and provenance tables to the core schema. Use a dedicated real-study DB.
 URL-encode special password characters. Never commit actual connection URLs.
 
 The portable [window-function query](../sql/analysis.sql) works on both backends.
+The optional forecast module runs with `python surprise_analysis.py --db mysql --no-plot`.
+Its [summary query](../sql/surprise_summary.sql) uses the same joins, classifications,
+window-based medians and conditional aggregation on SQLite and MySQL 8.
 The MySQL schema is [schema_mysql.sql](../sql/schema_mysql.sql). UTC timestamps are
 stored as canonical ISO text to preserve offset semantics shared with SQLite.
 
