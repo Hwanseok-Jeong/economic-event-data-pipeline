@@ -22,5 +22,7 @@ bars at a selected fixed horizon (24h by default). The original daily heatmap us
 calendar next-day joins and had per-instrument ordering issues; the new view must
 not be described as an identical reproduction of those historical results.
 
-Original presentations remain local pending review of publication edits. Historical
-plots do not validate this refactor or establish causal impact or trading performance.
+Original presentations remain local. The [revised public presentation](presentation_public.pdf)
+retains the question and historical MySQL design, explains the maintained schema,
+and replaces old result plots with labeled synthetic examples from the pipeline.
+Historical plots do not validate this refactor or establish causal impact or trading performance.

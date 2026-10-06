@@ -1,0 +1,4 @@
+name,country,timestamp_utc,importance
+Synthetic policy announcement,Demo country,2024-01-02T12:00:00+00:00,High
+Synthetic inflation release,Demo country,2024-01-03T12:00:00+00:00,High
+Synthetic employment release,Demo country,2024-01-04T12:00:00+00:00,High

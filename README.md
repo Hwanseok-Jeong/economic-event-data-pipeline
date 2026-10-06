@@ -10,6 +10,18 @@ transactional upserts, ingestion audit records, SQL window functions, and automa
 checks. It is a local batch pipeline; it does not claim production deployment,
 large-scale processing, or profitable trading performance.
 
+## View the project
+
+- [Public presentation (3-page PDF)](docs/presentation_public.pdf): coursework
+  context, original and maintained SQL designs, and updated synthetic results.
+- [Curated demo results](results/README.md): response curves, annual heatmap,
+  CSV outputs, and a reproducibility manifest.
+
+![Synthetic event response curves](results/response_curve.png)
+
+Streamlit remains the interactive application: `streamlit run dashboard.py`.
+These static exports let visitors inspect results directly on GitHub.
+
 ```mermaid
 flowchart LR
     A[Optional Yahoo price connector] --> B[CSV contracts]
@@ -33,7 +45,8 @@ python -m unittest discover -s tests -v
 The demo creates 288 synthetic hourly prices across three fictional instruments,
 three events, and nine 24-hour responses. Repeating it updates existing records
 without duplicating prices or events; each successful ingestion records a run.
-Generated files stay in ignored `data/` and `outputs/` directories.
+Working files stay in ignored `data/` and `outputs/` directories. A curated
+synthetic results bundle is intentionally tracked in `results/`.
 
 For the optional dashboard and live price connector:
 
@@ -139,10 +152,13 @@ retries, and PostgreSQL deployment. These are future work, not implemented featu
 | `sql/` | Relational schema and window-function analysis |
 | `database.py` | SQLite/MySQL connection boundary |
 | `dashboard.py` | Streamlit response curves and event heatmaps |
+| `results/` | Small published synthetic graphs, CSVs, and manifest |
+| `build_portfolio.py` | Reproducible static results and PDF generator |
 | `tests/` | Offline correctness checks |
 | `.github/workflows/test.yml` | Continuous integration |
 | `docs/publication.md` | Public/private file boundary and coursework changes |
 
-CVs, coursework presentations, original notebooks/scripts, provider datasets,
-credentials, and generated artifacts stay local through the publication allowlist
-in `.gitignore`. No provider dataset is redistributed with this repository.
+CVs, original coursework presentations, original notebooks/scripts, provider
+datasets, credentials, and working outputs stay local. The revised public PDF and
+curated synthetic results are explicitly included through `.gitignore`.
+No provider dataset is redistributed with this repository.

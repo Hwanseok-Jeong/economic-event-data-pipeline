@@ -74,14 +74,16 @@ def demo():
     """Synthetic fixtures, deliberately unrelated to historical market performance."""
     start = datetime(2024, 1, 2, tzinfo=timezone.utc)
     prices = []
-    for instrument, base in [('DEMO_US', 100), ('DEMO_EU', 200), ('DEMO_ASIA', 300)]:
+    for position, (instrument, base) in enumerate([('DEMO_US', 100), ('DEMO_EU', 200), ('DEMO_ASIA', 300)]):
         for hour in range(96):
             prices.append(dict(instrument=instrument,
                                timestamp_utc=(start + timedelta(hours=hour)).isoformat(),
-                               close=round(base * (1 + hour * .0002 + .002 * math.sin(hour)), 6)))
-    events = [dict(name='Synthetic policy announcement', country='Demo country',
+                               close=round(base * (1 + hour * .0002 * (position + 1) +
+                                                    (.002 + .001 * position) * math.sin(hour + position)), 6)))
+    events = [dict(name=name, country='Demo country',
                    timestamp_utc=(start + timedelta(hours=hour)).isoformat(), importance='High')
-              for hour in [12, 36, 60]]
+              for name, hour in zip(['Synthetic policy announcement', 'Synthetic inflation release',
+                                     'Synthetic employment release'], [12, 36, 60])]
     return prices, events
 
 

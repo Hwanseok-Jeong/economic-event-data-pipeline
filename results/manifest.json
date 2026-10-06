@@ -1,0 +1,48 @@
+{
+  "dataset": "synthetic",
+  "generator": "pipeline.demo",
+  "price_rows": 288,
+  "event_rows": 3,
+  "response_rows": 216,
+  "valid_response_rows": 216,
+  "command": "python build_portfolio.py",
+  "methodology": "UTC completed hourly bars; 1h alignment tolerance",
+  "artifacts": {
+    "docs/presentation_public.pdf": {
+      "bytes": 222850,
+      "sha256": "19c36232484240077efd6a690fb3d5384ce6e2c689f5ac6431a140d5f98ebfa5"
+    },
+    "results/event_heatmap.png": {
+      "bytes": 53321,
+      "sha256": "de53f0d9956197ae2c7d1dd3594de9b06f465ab7e0e9f46aa057c96c11042980"
+    },
+    "results/event_heatmap.svg": {
+      "bytes": 54908,
+      "sha256": "1c3ccc334fbdb0b841ecedbdd2648ac7f29a9962f014ab2bcfbc04a956288c9f"
+    },
+    "results/response_curve.csv": {
+      "bytes": 31132,
+      "sha256": "991e014920bcb5b4d5df025e37017f83bee4bf2c59058cd83bb0b88e5089c320"
+    },
+    "results/response_curve.png": {
+      "bytes": 151498,
+      "sha256": "cb0abffdbd19ae86d119ec048e906fb833ab09c968d292c8634eb403f52042b6"
+    },
+    "results/response_curve.svg": {
+      "bytes": 76791,
+      "sha256": "37e2101fdaa55e6738ade7709865ac90ca20ed54e7088273f0f065ff4bc2d79f"
+    },
+    "results/responses_24h.csv": {
+      "bytes": 1401,
+      "sha256": "43cd6ecd7c4ec9693594991b451902db56242b419a6bc8dd0a0ea120034817c9"
+    },
+    "results/synthetic_events.csv": {
+      "bytes": 261,
+      "sha256": "5707a4bcd2c1d3ca39505afef4b04df876879ebbecf480ba6b5a88c734c5e586"
+    },
+    "results/synthetic_prices.csv": {
+      "bytes": 13443,
+      "sha256": "f193cb792b511c789c46b9ceedc2933cf2b1a01f94da4ab3ed1d7391e0d4092c"
+    }
+  }
+}

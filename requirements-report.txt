@@ -1,0 +1,3 @@
+# Optional static portfolio/PDF generation; core pipeline stays dependency-free.
+matplotlib>=3.9,<4
+reportlab>=4.2,<6

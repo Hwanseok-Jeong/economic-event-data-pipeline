@@ -7,6 +7,9 @@
 !/pipeline.py
 !/database.py
 !/dashboard.py
+!/build_portfolio.py
+!/requirements-report.txt
+!/results/
 !/sql/
 !/tests/
 !/docs/

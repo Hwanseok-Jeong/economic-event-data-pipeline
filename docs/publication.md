@@ -1,11 +1,16 @@
 # Publication boundary
 
 The root .gitignore uses an allowlist. Only maintained code, SQL, tests, workflow,
-README, configuration example, and these documents are publication candidates.
+README, configuration example, these documents, and the curated synthetic
+`results/` bundle are publication candidates.
 
-Excluded: CV PDFs, presentations and scripts, coursework notebooks (including
+Excluded: CV PDFs, original presentations and scripts, coursework notebooks (including
 saved outputs), legacy Python scripts, memo.txt, original CSV datasets, generated
-databases/results, local tools, and credentials. Originals remain on disk.
+databases/working results, local tools, and credentials. Originals remain on disk.
+`docs/presentation_public.pdf` is a revised three-page portfolio presentation:
+the original problem and table design are described, while result plots are
+replaced by clearly labeled synthetic pipeline outputs. It does not contain the
+original provider screenshots, private CV, or original historical result plots.
 
 The public demo is generated from synthetic data. Historical coursework results
 are not evidence for the maintained pipeline's correctness or market performance.
