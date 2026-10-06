@@ -16,7 +16,7 @@ flowchart LR
     C[Economic event CSV] --> B
     D[Synthetic demo generator] --> E[Validation and UTC normalization]
     B --> E
-    E --> F[SQLite: prices, events, pipeline_runs]
+    E --> F[SQLite / MySQL: prices, events, pipeline_runs]
     F --> G[SQL returns and event study]
     G --> H[CSV report / Streamlit dashboard]
 ```
@@ -44,6 +44,13 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 streamlit run dashboard.py
 ```
+
+The dashboard restores 1–24 hour event-response curves and annual event heatmaps,
+with log/percentage returns, observation counts, alignment records, and CSV export.
+Heatmaps use a selected hourly horizon, not the original daily next-day calculation.
+For the executable MySQL/SQLAlchemy backend, see [MySQL setup](docs/mysql.md).
+The [coursework context](docs/coursework.md) explains the original data flow and
+what changed during the refactor.
 
 ## Ingest your own data
 
@@ -112,13 +119,13 @@ and reported historical returns are not shipped as validated results.
 
 ## Engineering choices and scope
 
-- SQLite keeps the demo portable; the original implementation used MySQL and SQLAlchemy.
+- SQLite keeps the demo portable; `--db mysql` uses MySQL through SQLAlchemy and PyMySQL.
 - Primary keys, constraints, and indexed timestamps encode the data model.
 - Parameterized SQL and transactions support safe, repeatable loading.
 - Run records capture input counts and source labels; they are not full lineage or failure monitoring.
 - Tests cover repeated loads, invalid batches, duplicate conflicts, time offsets,
   per-instrument returns, event alignment, and missing trading-hour observations.
-- GitHub Actions runs the offline tests and demo without credentials.
+- GitHub Actions runs offline checks plus integration tests on a disposable MySQL 8.4 service.
 
 Useful next steps would be migrations, source checksums and failure audit records,
 scheduled incremental ingestion, authenticated economic-data connectors, provider
@@ -130,7 +137,8 @@ retries, and PostgreSQL deployment. These are future work, not implemented featu
 |---|---|
 | `pipeline.py` | CLI, extraction adapter, validation, load, event report |
 | `sql/` | Relational schema and window-function analysis |
-| `dashboard.py` | Optional Streamlit viewer |
+| `database.py` | SQLite/MySQL connection boundary |
+| `dashboard.py` | Streamlit response curves and event heatmaps |
 | `tests/` | Offline correctness checks |
 | `.github/workflows/test.yml` | Continuous integration |
 | `docs/publication.md` | Public/private file boundary and coursework changes |

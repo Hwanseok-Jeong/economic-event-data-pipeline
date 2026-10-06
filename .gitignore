@@ -5,6 +5,7 @@
 !/README.md
 !/requirements.txt
 !/pipeline.py
+!/database.py
 !/dashboard.py
 !/sql/
 !/tests/

@@ -4,7 +4,7 @@ from contextlib import closing
 import tempfile
 import unittest
 from pathlib import Path
-from pipeline import ROOT, demo, load, responses, utc, validate
+from pipeline import ROOT, demo, load, response_curve, responses, utc, validate
 
 
 class PipelineTests(unittest.TestCase):
@@ -42,6 +42,14 @@ class PipelineTests(unittest.TestCase):
         prices.append(dict(prices[0], close=999))
         with self.assertRaises(ValueError):
             validate(prices, events)
+
+    def test_full_curve_preserves_single_horizon_results(self):
+        prices, events = demo()
+        load(self.db, prices, events, 'test')
+        curve = response_curve(self.db)
+        self.assertEqual(len(curve), 216)
+        self.assertEqual([r for r in curve if r['horizon_hours'] == 24], responses(self.db, 24))
+        self.assertEqual({r['horizon_hours'] for r in curve}, set(range(1, 25)))
 
     def test_returns_are_partitioned_by_instrument(self):
         prices, events = demo()

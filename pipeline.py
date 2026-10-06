@@ -4,10 +4,10 @@ import csv
 import hashlib
 import json
 import math
-import sqlite3
-from contextlib import closing
+from bisect import bisect_left, bisect_right
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from database import connect
 
 ROOT = Path(__file__).resolve().parent
 
@@ -55,15 +55,15 @@ def validate(prices, events):
 
 def load(db, prices, events, source):
     prices, events = validate(prices, events)
-    Path(db).parent.mkdir(parents=True, exist_ok=True)
-    with closing(sqlite3.connect(db)) as connection, connection:
-        connection.executescript((ROOT / 'sql/schema.sql').read_text())
+    with connect(db, initialize=True) as connection:
+        price_conflict = ('ON DUPLICATE KEY UPDATE close=VALUES(close)' if db == 'mysql'
+                          else 'ON CONFLICT(instrument,timestamp_utc) DO UPDATE SET close=excluded.close')
+        event_conflict = ('ON DUPLICATE KEY UPDATE importance=VALUES(importance)' if db == 'mysql'
+                          else 'ON CONFLICT(event_key) DO UPDATE SET importance=excluded.importance')
         connection.executemany(
-            'INSERT INTO prices VALUES (?, ?, ?) ON CONFLICT(instrument,timestamp_utc) '
-            'DO UPDATE SET close=excluded.close', prices)
+            'INSERT INTO prices VALUES (?, ?, ?) ' + price_conflict, prices)
         connection.executemany(
-            'INSERT INTO events VALUES (?, ?, ?, ?, ?) ON CONFLICT(event_key) '
-            'DO UPDATE SET importance=excluded.importance', events)
+            'INSERT INTO events VALUES (?, ?, ?, ?, ?) ' + event_conflict, events)
         connection.execute('INSERT INTO pipeline_runs '
                            '(started_utc,source,price_rows,event_rows) VALUES (?,?,?,?)',
                            (datetime.now(timezone.utc).isoformat(), source, len(prices), len(events)))
@@ -86,30 +86,46 @@ def demo():
 
 
 def responses(db, horizon=24, tolerance=1):
+    return response_curve(db, [horizon], tolerance)
+
+
+def response_curve(db, horizons=range(1, 25), tolerance=1):
     """Hourly timestamps represent bar END times; tolerate at most one-hour gaps."""
-    if horizon <= 0 or tolerance < 0:
+    horizons = list(horizons)
+    if not horizons or any(h <= 0 for h in horizons) or tolerance < 0:
         raise ValueError('Horizon must be positive and tolerance nonnegative')
     result = []
-    with closing(sqlite3.connect(db)) as connection, connection:
+    with connect(db) as connection:
         events = connection.execute("SELECT name,timestamp_utc FROM events WHERE importance='High' ORDER BY timestamp_utc").fetchall()
-        instruments = [r[0] for r in connection.execute('SELECT DISTINCT instrument FROM prices ORDER BY instrument')]
-        for name, timestamp in events:
-            event_time = datetime.fromisoformat(timestamp)
-            target = (event_time + timedelta(hours=horizon)).isoformat()
-            for instrument in instruments:
-                before = connection.execute('SELECT timestamp_utc,close FROM prices WHERE instrument=? AND timestamp_utc<=? ORDER BY timestamp_utc DESC LIMIT 1', (instrument, timestamp)).fetchone()
-                after = connection.execute('SELECT timestamp_utc,close FROM prices WHERE instrument=? AND timestamp_utc>=? ORDER BY timestamp_utc LIMIT 1', (instrument, target)).fetchone()
-                status, value = 'missing_price', None
-                if before and after:
-                    base_gap = (event_time - datetime.fromisoformat(before[0])).total_seconds() / 3600
-                    target_gap = (datetime.fromisoformat(after[0]) - datetime.fromisoformat(target)).total_seconds() / 3600
-                    if max(base_gap, target_gap) <= tolerance:
-                        status, value = 'ok', math.log(after[1] / before[1])
-                    else:
-                        status = 'outside_tolerance'
-                result.append(dict(event=name, event_timestamp_utc=timestamp, instrument=instrument,
-                                   horizon_hours=horizon, base_timestamp_utc=before[0] if before else '',
-                                   target_timestamp_utc=after[0] if after else '', status=status, log_return=value))
+        series = {}
+        for instrument, timestamp, close in connection.execute('SELECT instrument,timestamp_utc,close FROM prices ORDER BY instrument,timestamp_utc').fetchall():
+            times, values = series.setdefault(instrument, ([], []))
+            times.append(datetime.fromisoformat(timestamp))
+            values.append(close)
+        # Sort parsed datetimes so fractional-second formatting cannot affect alignment.
+        for instrument, (times, values) in series.items():
+            pairs = sorted(zip(times, values))
+            series[instrument] = ([p[0] for p in pairs], [p[1] for p in pairs])
+        for horizon in horizons:
+            for name, timestamp in events:
+                event_time = datetime.fromisoformat(timestamp)
+                target = event_time + timedelta(hours=horizon)
+                for instrument, (times, values) in series.items():
+                    base = bisect_right(times, event_time) - 1
+                    end = bisect_left(times, target)
+                    before = (times[base].isoformat(), values[base]) if base >= 0 else None
+                    after = (times[end].isoformat(), values[end]) if end < len(times) else None
+                    status, value = 'missing_price', None
+                    if before and after:
+                        base_gap = (event_time - datetime.fromisoformat(before[0])).total_seconds() / 3600
+                        target_gap = (datetime.fromisoformat(after[0]) - target).total_seconds() / 3600
+                        if max(base_gap, target_gap) <= tolerance:
+                            status, value = 'ok', math.log(after[1] / before[1])
+                        else:
+                            status = 'outside_tolerance'
+                    result.append(dict(event=name, event_timestamp_utc=timestamp, instrument=instrument,
+                                       horizon_hours=horizon, base_timestamp_utc=before[0] if before else '',
+                                       target_timestamp_utc=after[0] if after else '', status=status, log_return=value))
     return result
 
 

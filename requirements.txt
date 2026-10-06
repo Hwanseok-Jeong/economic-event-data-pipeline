@@ -1,4 +1,7 @@
 # Core CSV/SQLite pipeline and tests use only Python's standard library.
-streamlit>=1.40,<2
+streamlit>=1.53,<2
 pandas>=2.2,<3
 yfinance>=0.2.54,<1
+SQLAlchemy>=2.0,<3
+PyMySQL[rsa]>=1.1,<2
+altair>=5,<7

@@ -16,7 +16,8 @@ Never force-add the CV, original notebook, or excluded coursework scripts.
 
 ## Changes from coursework
 
-- MySQL coursework is preserved locally; SQLite provides a portable public demo.
+- MySQL coursework is preserved locally; the maintained project supports both
+  a portable SQLite demo and a MySQL/SQLAlchemy execution path.
 - Credentials and personal filesystem paths are absent from maintained code.
 - SQL window functions partition returns by instrument and order observations.
 - Offset-aware timestamps normalize to UTC; naive timestamps fail validation.
