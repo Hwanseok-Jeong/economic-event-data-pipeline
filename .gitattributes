@@ -2,5 +2,5 @@
 *.pdf binary
 *.png binary
 # Keep exact artifact bytes so manifest hashes survive clone on every OS.
-results/** -text
-results/*.svg whitespace=-blank-at-eol
+results/** -text whitespace=cr-at-eol
+results/*.svg whitespace=cr-at-eol,-blank-at-eol

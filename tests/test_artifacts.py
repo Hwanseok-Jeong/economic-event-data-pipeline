@@ -26,4 +26,8 @@ class ArtifactTests(unittest.TestCase):
         self.assertEqual(len(saved), len(expected))
         for actual, row in zip(saved, expected):
             for key, value in row.items():
-                self.assertEqual(actual[key], str(value) if value is not None else '', key)
+                if isinstance(value, float):
+                    # math.log can differ in its final bit across Windows/Linux.
+                    self.assertAlmostEqual(float(actual[key]), value, delta=1e-14, msg=key)
+                else:
+                    self.assertEqual(actual[key], str(value) if value is not None else '', key)
