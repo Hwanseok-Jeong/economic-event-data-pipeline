@@ -1,6 +1,7 @@
 # Explicit publication allowlist: coursework and private documents stay local.
 /*
 !/.gitignore
+!/.gitattributes
 !/.env.example
 !/README.md
 !/requirements.txt
