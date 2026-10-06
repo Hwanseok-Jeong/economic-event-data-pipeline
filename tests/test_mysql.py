@@ -38,7 +38,7 @@ class MySQLTests(unittest.TestCase):
                                ('DEMO_US','2024-01-02T00:00:00+00:00','2024-01-02T23:00:00+00:00','2024-01-02'))
             bars = [('DEMO_US', p['timestamp_utc'],
                      (datetime.fromisoformat(p['timestamp_utc'])+timedelta(hours=1)).isoformat(),
-                     p['close'], p['close'], '2024-01-02') for p in prices
+                     p['close'], p['close'], '2024-01-02') for p in demo()[0]
                     if p['instrument']=='DEMO_US' and p['timestamp_utc'].startswith('2024-01-02')]
             connection.executemany('INSERT INTO market_bars VALUES (?,?,?,?,?,?)',bars)
         session_rows = session_responses('mysql',[1])
