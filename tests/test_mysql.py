@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from database import connect
 from pipeline import ROOT, demo, load, response_curve, responses
 from study import session_responses
+from build_case_report import classify
 
 
 @unittest.skipUnless(os.environ.get('MYSQL_INTEGRATION_TEST') == '1', 'MySQL integration database not enabled')
@@ -45,3 +46,15 @@ class MySQLTests(unittest.TestCase):
         self.assertEqual(len(session_rows),1)
         self.assertEqual(session_rows[0]['mode'],'open_at_release')
         self.assertEqual(session_rows[0]['status'],'ok')
+        with connect('mysql') as connection:
+            connection.execute('CREATE TABLE session_responses_report ('
+                               'event_key VARCHAR(64),country VARCHAR(128),event_timestamp_utc VARCHAR(32),'
+                               'instrument VARCHAR(16),status VARCHAR(40),observation_timestamp_utc VARCHAR(32),'
+                               'return_pct DOUBLE)')
+            connection.executemany('INSERT INTO session_responses_report VALUES (?,?,?,?,?,?,?)',
+                [('fixture','US',stamp,market,'ok',f'2024-01-02T0{i}:00:00+00:00',i/10)
+                 for i,market in enumerate(['STOXX50E','NDX','HSI'],2)])
+            cases=classify(connection)
+            self.assertEqual(len(cases),1)
+            self.assertEqual(cases[0]['direction'],'all_positive')
+            self.assertEqual(cases[0]['increasing_magnitude'],1)

@@ -1,0 +1,86 @@
+{
+  "source_metadata": {
+    "dataset": "real",
+    "start": "2024-10-08",
+    "end": "2024-12-30",
+    "event_source": "Investing.com archived coursework CSV",
+    "event_timezone": "UTC",
+    "event_file": "economic_calendar_data_final.csv",
+    "event_sha256": "96245cdd505dfa1bd5ff8e396cfe282436b6a186d58b11a9f0559e9f91c26af9",
+    "timezone_checkpoints": [
+      {
+        "date": "2024-10-10",
+        "release": "CPI (MoM)",
+        "timestamp_utc": "2024-10-10T12:30:00+00:00"
+      },
+      {
+        "date": "2024-11-01",
+        "release": "Nonfarm Payrolls",
+        "timestamp_utc": "2024-11-01T12:30:00+00:00"
+      },
+      {
+        "date": "2024-11-07",
+        "release": "Fed Interest Rate Decision",
+        "timestamp_utc": "2024-11-07T19:00:00+00:00"
+      }
+    ],
+    "price_sources": [
+      {
+        "market": "HSI",
+        "ticker": "^HSI",
+        "source": "Yahoo Finance",
+        "file": "HSI_1h_UTC.csv",
+        "sha256": "7857fadac53d2be37f04909a9387376c2dbe6e11fbc87787f0c33f92d98d01d4",
+        "accepted_bars": 226,
+        "excluded_bars": 168
+      },
+      {
+        "market": "STOXX50E",
+        "ticker": "^STOXX50E",
+        "source": "Yahoo Finance",
+        "file": "STOXX50E_1h_UTC.csv",
+        "sha256": "57adcdab5a2d58472b58091b80488be7fad56a43724d51102f694e12dc0c92fc",
+        "accepted_bars": 456,
+        "excluded_bars": 57
+      },
+      {
+        "market": "NDX",
+        "ticker": "^NDX",
+        "source": "Yahoo Finance",
+        "file": "NDX_1h_yahoo.csv",
+        "sha256": "2f1e11bb730297cc02940cbd0249ea257b87e7bd77a48d8c55653ab6b204db6d",
+        "accepted_bars": 342,
+        "excluded_bars": 56
+      }
+    ],
+    "events": 124,
+    "excluded_event_times": 26,
+    "source_bar_convention": "UTC start labels; only full 1h bars inside regular cash segments retained",
+    "calendar_proxies": {
+      "STOXX50E": "XPAR main cash-session proxy, not STOXX dissemination calendar",
+      "NDX": "XNYS regular-hours proxy, not a Nasdaq-specific holiday calendar"
+    }
+  },
+  "artifacts": {
+    "results/cases/example_observations.csv": {
+      "bytes": 4345,
+      "sha256": "321e6fe30eae298955504f52858009136c5d381c0c638a28e0fae892c5b7ab01"
+    },
+    "results/cases/release_classifications.csv": {
+      "bytes": 14126,
+      "sha256": "d6988251c1be2f2d80c137727dc041eceb8f7b6828d0c811cb0f36d07c1784bb"
+    },
+    "results/cases/release_examples.png": {
+      "bytes": 147020,
+      "sha256": "0b0f1afd80ce398286c024aaee2b07e673405382dcd86817c07d1409a44fcc98"
+    },
+    "results/cases/summary.json": {
+      "bytes": 505,
+      "sha256": "415465a4f5879ee598f009817d583b53766055d1d96b28dfb752bb3706808062"
+    },
+    "results/cases/threshold_sensitivity.csv": {
+      "bytes": 733,
+      "sha256": "a51175a689ad72711b8f576294a032532e7e808434705c8c2ebcd930f8425d8e"
+    }
+  }
+}

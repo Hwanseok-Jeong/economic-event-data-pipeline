@@ -35,6 +35,51 @@ These static exports let visitors inspect results directly on GitHub.
 
 ## What was observed?
 
+**Do the three markets move in the same direction around the same release, and
+are later observed moves larger?** SQL groups co-released indicators by country
+and UTC release time, then compares each market's nominal +1h observation after
+release (if open) or its next session opening (if closed).
+
+Of 124 event records, there are 85 release clusters; **73 have valid observations
+in all three markets**, while 12 are excluded. With a ±0.1% neutral band:
+
+| Cross-market outcome | Releases | Share of 73 |
+| --- | ---: | ---: |
+| All three positive | 8 | 11.0% |
+| All three negative | 5 | 6.8% |
+| At least one positive and one negative | 47 | 64.4% |
+| Remaining cases involving neutral moves | 13 | 17.8% |
+
+Thus **17.8% move in the same direction** beyond the threshold. In **4/73 (5.5%)**,
+all three move in the same direction and absolute returns increase strictly in
+actual observation-time order (4/13, or 30.8%, of same-direction cases).
+These percentages describe this Q4 sample and these measurement rules, rather
+than the probability that an announcement causes a particular market response.
+
+![SQL-selected release examples](results/cases/release_examples.png)
+
+Examples are the **earliest qualifying release in each class**, selected by SQL
+classification rather than by the largest return:
+
+- **2024-10-10 U.S. CPI / jobless-claims release bundle:** Europe −0.557%, Nasdaq
+  −0.121%, Hong Kong −2.330%. Observations are 1.5h, 2h and **86h** after release;
+  Hong Kong's holiday/weekend gap makes the last return especially exposed to
+  intervening news. This is a co-release example, not an isolated CPI effect.
+- **2024-10-09 U.S. 10-year note auction:** Nasdaq +0.204%, Hong Kong +3.257%,
+  Europe −0.244%, observed after 1.5h, 9.5h and 15h respectively.
+- **2024-10-17 ECB interest/deposit-rate release bundle:** Europe +0.131%, Nasdaq
+  +0.485%, Hong Kong +0.751%, observed after 1.75h, 2.25h and 14.25h.
+  The later observations are larger; this alone does not establish transmission
+  from Europe to America to Asia.
+
+**Answer:** responses in this sample frequently differ across markets. Larger
+later observations exist, but different baseline intervals, regional index
+composition, simultaneous releases and intervening news can also explain them.
+The analysis measures association around announcements; it does not isolate
+their causal impact. See the [SQL and classification method](results/cases/README.md),
+[all release classifications](results/cases/release_classifications.csv), and
+[threshold sensitivity](results/cases/threshold_sensitivity.csv).
+
 The actual run retains 1,024 full cash-session hourly bars and 124 timed
 high-importance events. For the three U.S. CPI (MoM) releases, Europe is open at
 release while Hong Kong and U.S. cash trading are closed. At the nominal +1h target,
@@ -58,6 +103,7 @@ python -m pip install -r requirements-study.txt
 python fetch_cash_prices.py --market NDX --start 2024-10-08 --end 2024-12-31
 python study.py prepare --hsi HSI_1h_UTC.csv --stoxx STOXX50E_1h_UTC.csv --ndx data/raw/NDX_1h_yahoo.csv --events economic_calendar_data_final.csv --event-timezone UTC
 python build_real_report.py
+python build_case_report.py
 streamlit run dashboard.py
 ```
 

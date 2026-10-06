@@ -1,0 +1,20 @@
+{
+  "event_records": 124,
+  "release_clusters": 85,
+  "eligible_releases": 73,
+  "excluded_releases": 12,
+  "threshold_pct": 0.1,
+  "categories": {
+    "mixed_direction": 47,
+    "all_negative": 5,
+    "all_positive": 8,
+    "includes_neutral": 13
+  },
+  "same_direction_increasing_magnitude": 4,
+  "percentages": {
+    "mixed_direction": 64.38356164383562,
+    "all_negative": 6.8493150684931505,
+    "all_positive": 10.95890410958904,
+    "includes_neutral": 17.80821917808219
+  }
+}

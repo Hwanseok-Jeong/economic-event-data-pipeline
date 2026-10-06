@@ -1,0 +1,17 @@
+threshold_pct,category,count,eligible_releases,share_pct
+0,all_positive,12,73,16.438356164383563
+0,all_negative,7,73,9.58904109589041
+0,mixed_direction,54,73,73.97260273972603
+0,includes_neutral,0,73,0.0
+0.05,all_positive,10,73,13.698630136986301
+0.05,all_negative,6,73,8.219178082191782
+0.05,mixed_direction,51,73,69.86301369863014
+0.05,includes_neutral,6,73,8.219178082191782
+0.1,all_positive,8,73,10.95890410958904
+0.1,all_negative,5,73,6.8493150684931505
+0.1,mixed_direction,47,73,64.38356164383562
+0.1,includes_neutral,13,73,17.80821917808219
+0.2,all_positive,4,73,5.47945205479452
+0.2,all_negative,3,73,4.109589041095891
+0.2,mixed_direction,43,73,58.9041095890411
+0.2,includes_neutral,23,73,31.506849315068493
