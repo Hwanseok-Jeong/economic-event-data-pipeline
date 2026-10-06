@@ -4,3 +4,4 @@
 # Keep exact artifact bytes so manifest hashes survive clone on every OS.
 results/** -text whitespace=cr-at-eol
 results/*.svg whitespace=cr-at-eol,-blank-at-eol
+results/**/*.svg whitespace=cr-at-eol,-blank-at-eol

@@ -80,7 +80,7 @@ def generate(output=ROOT / 'results'):
     fig.savefig(output / 'event_heatmap.svg', metadata={'Date': None})
     plt.close(fig)
 
-    pdf = ROOT / 'docs/presentation_public.pdf'
+    pdf = ROOT / 'docs/presentation_synthetic.pdf'
     pdf.parent.mkdir(parents=True, exist_ok=True)
     c = canvas.Canvas(str(pdf), pagesize=(960, 540), invariant=1)
     c.setTitle('Economic Event & Market Data Pipeline - Public Portfolio')

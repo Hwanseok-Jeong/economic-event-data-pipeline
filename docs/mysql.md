@@ -27,6 +27,10 @@ python pipeline.py demo --db mysql --output outputs/mysql_demo.csv
 
 Select `mysql` in the dashboard database field. For your own data, use the existing
 CSV contracts and `python pipeline.py ingest --db mysql --prices ... --events ...`.
+For session-aware actual analysis, use `python study.py prepare --db mysql`
+with the source arguments in [the real-study guide](real-study.md), then
+`python build_real_report.py --db mysql`. The study adds interval, session, event
+detail and provenance tables to the core schema. Use a dedicated real-study DB.
 `.env.example` is a template; the CLI does not automatically load `.env` files.
 URL-encode special password characters. Never commit actual connection URLs.
 

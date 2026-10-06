@@ -1,4 +1,7 @@
-# Curated demo results
+# Synthetic reproducibility fixture
+
+The representative project results are now [the real-data study](real/README.md).
+This folder remains an offline execution fixture.
 
 These are **synthetic**, reproducible pipeline outputs, not historical economic
 or trading results. The small checked-in bundle lets readers inspect results
@@ -34,7 +37,7 @@ python build_portfolio.py
 
 The script builds a fresh temporary SQLite database and uses the maintained
 pipeline's validation, loading, and response functions. It also regenerates the
-[public presentation](../docs/presentation_public.pdf). Report generation does not
+[synthetic presentation](../docs/presentation_synthetic.pdf). Report generation does not
 use the original private datasets, CV, or stored credentials.
 
 Daily working outputs and databases remain ignored in `outputs/` and `data/`.

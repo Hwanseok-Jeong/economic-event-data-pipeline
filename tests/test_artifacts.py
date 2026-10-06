@@ -9,6 +9,20 @@ from pipeline import ROOT, demo, load, response_curve
 
 
 class ArtifactTests(unittest.TestCase):
+    def test_real_report_artifact_integrity_and_cash_scope(self):
+        manifest = json.loads((ROOT/'results/real/manifest.json').read_text())
+        self.assertEqual(manifest['dataset'],'real')
+        self.assertEqual({s['ticker'] for s in manifest['price_sources']},{'^HSI','^STOXX50E','^NDX'})
+        self.assertEqual(len(manifest['timezone_checkpoints']),3)
+        for relative, record in manifest['artifacts'].items():
+            data=(ROOT/relative).read_bytes()
+            self.assertEqual(len(data),record['bytes'])
+            self.assertEqual(hashlib.sha256(data).hexdigest(),record['sha256'])
+        with (ROOT/'results/real/focus_1h_summary.csv').open(newline='',encoding='utf-8') as handle:
+            rows=list(csv.DictReader(handle))
+        self.assertEqual(len(rows),9)
+        self.assertTrue(all(int(row['n'])>=2 for row in rows))
+
     def test_manifest_and_responses_match_pipeline(self):
         manifest = json.loads((ROOT / 'results/manifest.json').read_text())
         self.assertEqual(manifest['dataset'], 'synthetic')

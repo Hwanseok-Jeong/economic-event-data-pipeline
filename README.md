@@ -1,9 +1,18 @@
-# Economic Event & Market Data Pipeline
+# Economic Events Across Global Cash Equity Sessions
 
-A Python and SQL side project that turns timestamped market prices and economic
-announcements into validated relational data and exploratory event responses.
-Originally developed in a Biological Databases course during an MSc in
-Bioinformatics, then reworked as a reproducible data engineering portfolio project.
+**How do major cash equity indices respond around economic announcements when
+Asian, European, and U.S. markets are open at different times?**
+
+This project starts with that question, integrates Yahoo Finance price observations
+and an Investing.com economic-calendar archive in SQL, and examines the resulting
+session-aware responses. It originated in a Biological Databases course during an
+MSc in Bioinformatics and has been reworked as an empirical Python / SQL side project.
+
+The actual study uses **Hang Seng (`^HSI`), EURO STOXX 50 (`^STOXX50E`), and
+Nasdaq-100 cash (`^NDX`)**, with a common window of **2024-10-08 to 2024-12-30**.
+The original `NQ=F` futures series has been replaced with actual Nasdaq cash data.
+Regular sessions overlap but do not cover 24 hours; DST, lunch breaks, holidays
+and reopening waits are part of the analysis rather than discarded details.
 
 The project demonstrates data contracts, UTC normalization, relational modeling,
 transactional upserts, ingestion audit records, SQL window functions, and automated
@@ -12,15 +21,50 @@ large-scale processing, or profitable trading performance.
 
 ## View the project
 
-- [Public presentation (3-page PDF)](docs/presentation_public.pdf): coursework
-  context, original and maintained SQL designs, and updated synthetic results.
-- [Curated demo results](results/README.md): response curves, annual heatmap,
-  CSV outputs, and a reproducibility manifest.
+- [Public presentation (3-page PDF)](docs/presentation_public.pdf): research question,
+  corrected session chart, actual source-to-SQL workflow, and observed results.
+- [Actual results](results/real/README.md): response curves, heatmap, mean/median/count
+  summaries, calendar examples, and source/artifact hashes.
+- [Methodology and original time-chart audit](docs/real-study.md).
+- [Offline synthetic fixture](results/README.md): a separate reproducible execution demo.
 
-![Synthetic event response curves](results/response_curve.png)
+![Actual event response curves](results/real/response_curve.png)
 
 Streamlit remains the interactive application: `streamlit run dashboard.py`.
 These static exports let visitors inspect results directly on GitHub.
+
+## What was observed?
+
+The actual run retains 1,024 full cash-session hourly bars and 124 timed
+high-importance events. For the three U.S. CPI (MoM) releases, Europe is open at
+release while Hong Kong and U.S. cash trading are closed. At the nominal +1h target,
+the European mean observed return is -0.184% (median -0.134%, n=3); Nasdaq's next-opening
+mean is +0.336% (median -0.121%, n=3); Hong Kong's next-opening mean is -0.797%
+(median -0.543%, n=3). **These are different information windows, not simultaneous
+or causally identified CPI effects.** Mean elapsed time since release is 1.5h,
+2.0h and 37.3h respectively; a Hong Kong holiday extends one reopening wait.
+
+Read the [findings and limitations](results/real/findings.md). Small samples,
+co-released indicators, different baseline windows, and intervening news prevent
+strong economic conclusions. The main lesson is that market availability changes
+what an “event response” can actually measure.
+
+## Run the real study
+
+Install `requirements-study.txt` and supply the sourced Yahoo/Investing archives:
+
+```sh
+python -m pip install -r requirements-study.txt
+python fetch_cash_prices.py --market NDX --start 2024-10-08 --end 2024-12-31
+python study.py prepare --hsi HSI_1h_UTC.csv --stoxx STOXX50E_1h_UTC.csv --ndx data/raw/NDX_1h_yahoo.csv --events economic_calendar_data_final.csv --event-timezone UTC
+python build_real_report.py
+streamlit run dashboard.py
+```
+
+The source datasets remain local; reproducing the exact empirical snapshot requires
+the archives identified by the manifest. Yahoo hourly retention can prevent later
+redownloads. [Detailed setup](docs/real-study.md) includes MySQL execution and source
+contracts. The synthetic path below remains runnable without private/provider data.
 
 ```mermaid
 flowchart LR
@@ -58,9 +102,11 @@ python -m pip install -r requirements.txt
 streamlit run dashboard.py
 ```
 
-The dashboard restores 1–24 hour event-response curves and annual event heatmaps,
+The dashboard provides 1–24 hour event-response curves and annual event heatmaps,
 with log/percentage returns, observation counts, alignment records, and CSV export.
-Heatmaps use a selected hourly horizon, not the original daily next-day calculation.
+Real-study views separate open-at-release and closed-at-release markets. Heatmaps
+use a selected hourly horizon after the appropriate reference, not the original
+daily next-day calculation. The dashboard selects the local real-study DB when available.
 For the executable MySQL/SQLAlchemy backend, see [MySQL setup](docs/mysql.md).
 The [coursework context](docs/coursework.md) explains the original data flow and
 what changed during the refactor.
@@ -102,7 +148,7 @@ source-level reconciliation is outside this project's scope.
 ## Optional live price extraction
 
 ```sh
-python pipeline.py fetch-prices --ticker 'NQ=F' --start 2026-09-28 --end 2026-10-02 --output data/prices.csv
+python pipeline.py fetch-prices --ticker '^NDX' --start 2026-09-28 --end 2026-10-02 --output data/prices.csv
 ```
 
 Choose recent dates supported by the provider. This adapter uses `yfinance`,
@@ -113,7 +159,10 @@ See the [official download documentation](https://ranaroussi.github.io/yfinance/
 The adapter has no retry/backoff or incremental checkpointing yet.
 Economic events use CSV ingestion; the original coursework used `investpy`.
 
-## Analysis semantics
+## Offline generic analysis semantics
+
+The session-aware empirical rules are documented [separately](docs/real-study.md).
+The following describes the generic demo/CSV pipeline.
 
 [`sql/analysis.sql`](sql/analysis.sql) calculates simple returns using `LAG(close)`
 partitioned by instrument and ordered by UTC timestamp. The event report calculates
@@ -152,7 +201,11 @@ retries, and PostgreSQL deployment. These are future work, not implemented featu
 | `sql/` | Relational schema and window-function analysis |
 | `database.py` | SQLite/MySQL connection boundary |
 | `dashboard.py` | Streamlit response curves and event heatmaps |
-| `results/` | Small published synthetic graphs, CSVs, and manifest |
+| `results/real/` | Actual analytical summaries, session chart, and provenance |
+| `results/` | Separate synthetic execution fixture |
+| `study.py` | Yahoo/Investing source normalization and session-aware SQL analysis |
+| `build_real_report.py` | Actual graphs, findings, and public presentation |
+| `fetch_cash_prices.py` | Yahoo cash-index hourly acquisition |
 | `build_portfolio.py` | Reproducible static results and PDF generator |
 | `tests/` | Offline correctness checks |
 | `.github/workflows/test.yml` | Continuous integration |
@@ -160,5 +213,5 @@ retries, and PostgreSQL deployment. These are future work, not implemented featu
 
 CVs, original coursework presentations, original notebooks/scripts, provider
 datasets, credentials, and working outputs stay local. The revised public PDF and
-curated synthetic results are explicitly included through `.gitignore`.
+derived actual summaries and synthetic fixtures are explicitly included through `.gitignore`.
 No provider dataset is redistributed with this repository.

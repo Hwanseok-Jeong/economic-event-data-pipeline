@@ -1,0 +1,10 @@
+family,instrument,mode,horizon_hours,n,mean_return_pct,median_return_pct,mean_wait_to_reference_hours,mean_elapsed_hours_since_event,mean_baseline_age_hours
+united states: CPI (MoM),HSI,closed_at_release,1,3,-0.7973643975953572,-0.542809941624911,36.333333333333336,37.333333333333336,5.666666666666667
+united states: CPI (MoM),NDX,closed_at_release,1,3,0.33629700698709264,-0.12104392667116048,1.0,2.0,17.0
+united states: CPI (MoM),STOXX50E,open_at_release,1,3,-0.18359832893553396,-0.13447377518371884,0.0,1.5,0.5
+united states: Fed Interest Rate Decision,HSI,closed_at_release,1,2,-0.23458711701357382,-0.23458711701357382,6.5,7.5,11.5
+united states: Fed Interest Rate Decision,NDX,open_at_release,1,2,-1.1303321024133786,-1.1303321024133786,0.0,1.5,0.5
+united states: Fed Interest Rate Decision,STOXX50E,closed_at_release,1,2,-0.8171979862231782,-0.8171979862231782,13.0,14.0,3.0
+united states: Nonfarm Payrolls,HSI,closed_at_release,1,2,0.30104979120194614,0.30104979120194614,60.5,61.5,5.5
+united states: Nonfarm Payrolls,NDX,closed_at_release,1,2,0.8716181613058317,0.8716181613058317,1.0,2.0,17.0
+united states: Nonfarm Payrolls,STOXX50E,open_at_release,1,2,-0.08348423397173677,-0.08348423397173677,0.0,1.5,0.5

@@ -139,7 +139,7 @@ def main():
     parser.add_argument('--events')
     parser.add_argument('--output', default='outputs/event_responses.csv')
     parser.add_argument('--horizon', type=int, default=24)
-    parser.add_argument('--ticker', default='NQ=F')
+    parser.add_argument('--ticker', default='^NDX')
     parser.add_argument('--start')
     parser.add_argument('--end')
     args = parser.parse_args()

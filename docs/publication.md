@@ -2,15 +2,16 @@
 
 The root .gitignore uses an allowlist. Only maintained code, SQL, tests, workflow,
 README, configuration example, these documents, and the curated synthetic
-`results/` bundle are publication candidates.
+`results/` bundle and derived empirical summaries in `results/real/` are publication candidates.
 
 Excluded: CV PDFs, original presentations and scripts, coursework notebooks (including
 saved outputs), legacy Python scripts, memo.txt, original CSV datasets, generated
 databases/working results, local tools, and credentials. Originals remain on disk.
 `docs/presentation_public.pdf` is a revised three-page portfolio presentation:
-the original problem and table design are described, while result plots are
-replaced by clearly labeled synthetic pipeline outputs. It does not contain the
-original provider screenshots, private CV, or original historical result plots.
+the research question, corrected trading-session chart and SQL workflow are
+described, while result plots use actual cash-index study summaries. It does not contain the
+original provider screenshots, private CV, or old uncorrected result plots.
+`docs/presentation_synthetic.pdf` is a separate synthetic example.
 
 The public demo is generated from synthetic data. Historical coursework results
 are not evidence for the maintained pipeline's correctness or market performance.

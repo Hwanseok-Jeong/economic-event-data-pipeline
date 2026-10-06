@@ -8,7 +8,7 @@
   "command": "python build_portfolio.py",
   "methodology": "UTC completed hourly bars; 1h alignment tolerance",
   "artifacts": {
-    "docs/presentation_public.pdf": {
+    "docs/presentation_synthetic.pdf": {
       "bytes": 222850,
       "sha256": "19c36232484240077efd6a690fb3d5384ce6e2c689f5ac6431a140d5f98ebfa5"
     },

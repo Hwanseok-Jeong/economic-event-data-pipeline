@@ -20,3 +20,31 @@ CREATE TABLE IF NOT EXISTS pipeline_runs (
     price_rows INTEGER NOT NULL,
     event_rows INTEGER NOT NULL
 );
+CREATE TABLE IF NOT EXISTS market_bars (
+    instrument TEXT NOT NULL,
+    bar_start_utc TEXT NOT NULL,
+    bar_end_utc TEXT NOT NULL,
+    open_price REAL NOT NULL CHECK (open_price > 0),
+    close_price REAL NOT NULL CHECK (close_price > 0),
+    session_date TEXT NOT NULL,
+    PRIMARY KEY (instrument, bar_start_utc)
+);
+CREATE TABLE IF NOT EXISTS market_sessions (
+    instrument TEXT NOT NULL,
+    segment_open_utc TEXT NOT NULL,
+    segment_close_utc TEXT NOT NULL,
+    session_date TEXT NOT NULL,
+    PRIMARY KEY (instrument, segment_open_utc)
+);
+CREATE TABLE IF NOT EXISTS event_details (
+    event_key TEXT PRIMARY KEY REFERENCES events(event_key),
+    family TEXT NOT NULL,
+    actual TEXT,
+    forecast TEXT,
+    previous TEXT,
+    source_event_id TEXT
+);
+CREATE TABLE IF NOT EXISTS study_metadata (
+    metadata_key TEXT PRIMARY KEY,
+    value_json TEXT NOT NULL
+);

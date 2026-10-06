@@ -24,5 +24,7 @@ not be described as an identical reproduction of those historical results.
 
 Original presentations remain local. The [revised public presentation](presentation_public.pdf)
 retains the question and historical MySQL design, explains the maintained schema,
-and replaces old result plots with labeled synthetic examples from the pipeline.
+and replaces old result plots with session-aware actual cash-index analysis.
+`NQ=F` is replaced by actual `^NDX` cash data; Yahoo Finance and Investing.com
+remain the original source identities. See [the empirical study](real-study.md).
 Historical plots do not validate this refactor or establish causal impact or trading performance.

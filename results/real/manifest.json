@@ -1,0 +1,123 @@
+{
+  "dataset": "real",
+  "start": "2024-10-08",
+  "end": "2024-12-30",
+  "event_source": "Investing.com archived coursework CSV",
+  "event_timezone": "UTC",
+  "event_file": "economic_calendar_data_final.csv",
+  "event_sha256": "96245cdd505dfa1bd5ff8e396cfe282436b6a186d58b11a9f0559e9f91c26af9",
+  "timezone_checkpoints": [
+    {
+      "date": "2024-10-10",
+      "release": "CPI (MoM)",
+      "timestamp_utc": "2024-10-10T12:30:00+00:00"
+    },
+    {
+      "date": "2024-11-01",
+      "release": "Nonfarm Payrolls",
+      "timestamp_utc": "2024-11-01T12:30:00+00:00"
+    },
+    {
+      "date": "2024-11-07",
+      "release": "Fed Interest Rate Decision",
+      "timestamp_utc": "2024-11-07T19:00:00+00:00"
+    }
+  ],
+  "price_sources": [
+    {
+      "market": "HSI",
+      "ticker": "^HSI",
+      "source": "Yahoo Finance",
+      "file": "HSI_1h_UTC.csv",
+      "sha256": "7857fadac53d2be37f04909a9387376c2dbe6e11fbc87787f0c33f92d98d01d4",
+      "accepted_bars": 226,
+      "excluded_bars": 168
+    },
+    {
+      "market": "STOXX50E",
+      "ticker": "^STOXX50E",
+      "source": "Yahoo Finance",
+      "file": "STOXX50E_1h_UTC.csv",
+      "sha256": "57adcdab5a2d58472b58091b80488be7fad56a43724d51102f694e12dc0c92fc",
+      "accepted_bars": 456,
+      "excluded_bars": 57
+    },
+    {
+      "market": "NDX",
+      "ticker": "^NDX",
+      "source": "Yahoo Finance",
+      "file": "NDX_1h_yahoo.csv",
+      "sha256": "2f1e11bb730297cc02940cbd0249ea257b87e7bd77a48d8c55653ab6b204db6d",
+      "accepted_bars": 342,
+      "excluded_bars": 56
+    }
+  ],
+  "events": 124,
+  "excluded_event_times": 26,
+  "source_bar_convention": "UTC start labels; only full 1h bars inside regular cash segments retained",
+  "calendar_proxies": {
+    "STOXX50E": "XPAR main cash-session proxy, not STOXX dissemination calendar",
+    "NDX": "XNYS regular-hours proxy, not a Nasdaq-specific holiday calendar"
+  },
+  "response_rows": 8928,
+  "valid_response_rows": 2380,
+  "response_status_counts": {
+    "ok": 2380,
+    "market_closed_at_target": 6414,
+    "outside_tolerance": 123,
+    "missing_price": 11
+  },
+  "focus_families": [
+    "united states: CPI (MoM)",
+    "united states: Nonfarm Payrolls",
+    "united states: Fed Interest Rate Decision"
+  ],
+  "methodology": "Full regular-session 1h bars only. Open-at-release reference=event time; closed-at-release reference=next segment opening. Target observations at most 60min late within same segment. Baseline is last observed pre-release completed close, or already observed current-session bar open. No closed-hour fill.",
+  "scope": "Observational study, no causal identification. Release groups can overlap. Reopening returns include overnight news and unobserved price movements.",
+  "artifacts": {
+    "results/real/aggregated_responses.csv": {
+      "bytes": 116625,
+      "sha256": "0aa1251487894a032377d7e4d2059375ae6145be06a6b76a6eb89010b56b547e"
+    },
+    "results/real/event_heatmap.png": {
+      "bytes": 73814,
+      "sha256": "f8eb04280e00f0e7e31b0d387698419037e317fffe5dbda13c0d7d3b4db913e1"
+    },
+    "results/real/event_heatmap.svg": {
+      "bytes": 70407,
+      "sha256": "8410a706d17dae9c2f451530c2edcc42621a97db314951d31f5bc53d948e04ab"
+    },
+    "results/real/findings.md": {
+      "bytes": 960,
+      "sha256": "ff56fa492e6f48006a5f7dc25aa2d4acaf1449d6cdd0ab6397f3cade943abd2d"
+    },
+    "results/real/focus_1h_summary.csv": {
+      "bytes": 1230,
+      "sha256": "3eb7ac7d70dad8c540b0c58f17b0e22f4ac9203cfc2adfb2fbec90b3a7ee7803"
+    },
+    "results/real/market_sessions.png": {
+      "bytes": 75606,
+      "sha256": "1c3b6b40f8e238bf1d454325970517ca116956a3175e8646defb813ab6d69fdd"
+    },
+    "results/real/market_sessions.svg": {
+      "bytes": 89684,
+      "sha256": "1577cb91a9fbebf26510c0a04e631de0ffdd06a0a236c17a81ea60b35a379a7b"
+    },
+    "results/real/response_curve.png": {
+      "bytes": 109572,
+      "sha256": "0b11ff0d5d602d8562b756c27ed16fa2491da091accfc50b5a41a0704a3ea14e"
+    },
+    "results/real/response_curve.svg": {
+      "bytes": 116171,
+      "sha256": "66e7f25b45c600cdc08f4b697ff22c35650d6fe4c50b0c17fb6d7a220f659df9"
+    },
+    "results/real/session_time_examples.csv": {
+      "bytes": 1526,
+      "sha256": "9b09da8f4981467562a51dae7e6a7040cd48431f25579e1a9ea64ac5120bea03"
+    },
+    "docs/presentation_public.pdf": {
+      "bytes": 323010,
+      "sha256": "2eb50a9b5dd1cf7081532b650d374b6a1b6de450dc7281c45794f1a4dd658bfe"
+    }
+  }
+}

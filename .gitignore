@@ -11,6 +11,10 @@
 !/build_portfolio.py
 !/requirements-report.txt
 !/results/
+!/study.py
+!/fetch_cash_prices.py
+!/build_real_report.py
+!/requirements-study.txt
 !/sql/
 !/tests/
 !/docs/
