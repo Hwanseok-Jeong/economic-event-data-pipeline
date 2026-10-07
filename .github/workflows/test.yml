@@ -1,6 +1,32 @@
 name: Pipeline checks
 on: [push, pull_request]
 jobs:
+  docker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the container image
+        run: docker compose build
+      - name: Start MySQL, batch pipeline and dashboard
+        run: docker compose up -d --wait --wait-timeout 240
+      - name: Check SQL, repeated ingestion and dashboard rendering
+        run: docker compose run --rm --no-deps pipeline python docker_smoke.py --save-state outputs/demo/restart_state.json
+      - name: Run tests inside the image
+        run: docker compose run --rm --no-deps pipeline python -m unittest discover -s tests -v
+      - name: Check HTTP health
+        run: curl --fail http://127.0.0.1:8501/_stcore/health
+      - name: Restart services with the same persistent volume
+        run: |
+          docker compose down
+          docker compose up -d --wait --wait-timeout 240
+          docker compose run --rm --no-deps pipeline python docker_smoke.py --check-state outputs/demo/restart_state.json
+      - name: Show diagnostics
+        if: failure()
+        run: docker compose ps --all && docker compose logs --tail 100
+      - name: Stop containers
+        if: always()
+        run: docker compose down
   test:
     runs-on: ubuntu-latest
     steps:

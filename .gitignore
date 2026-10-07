@@ -21,6 +21,14 @@
 !/tests/
 !/docs/
 !/.github/
+!/Dockerfile
+!/.dockerignore
+!/compose.yaml
+!/compose.real.yaml
+!/.env.docker.example
+!/container_runner.py
+!/docker_smoke.py
+!/requirements-docker.txt
 __pycache__/
 *.pyc
 .env

@@ -1,5 +1,7 @@
 # Economic Events Across Global Cash Equity Sessions
 
+**Python · SQL · MySQL / SQLite · Docker Compose · Streamlit · GitHub Actions**
+
 **How do major cash equity indices respond around economic announcements when
 Asian, European, and U.S. markets are open at different times?**
 
@@ -16,8 +18,30 @@ and reopening waits are part of the analysis rather than discarded details.
 
 The project demonstrates data contracts, UTC normalization, relational modeling,
 transactional upserts, ingestion audit records, SQL window functions, and automated
-checks. It is a local batch pipeline; it does not claim production deployment,
+checks. Docker Compose packages the batch pipeline, MySQL and dashboard for local
+execution; it does not claim a completed cloud or production deployment,
 large-scale processing, or profitable trading performance.
+
+```mermaid
+flowchart LR
+    A[Yahoo prices / Investing calendar archives] --> B[Python validation and UTC normalization]
+    B --> C[MySQL / SQLite]
+    C --> D[SQL transformations and event comparisons]
+    D --> E[Reports / Streamlit]
+```
+
+## Run with Docker
+
+Start Docker Desktop, then:
+
+```sh
+docker compose up --build -d --wait --wait-timeout 240
+```
+
+Open **http://localhost:8501**. This starts MySQL, loads the **synthetic offline
+demo**, then launches Streamlit. Database and report volumes survive container
+restarts. [Docker guide](docs/docker.md) covers checks, logs, report export and a
+separate read-only input configuration for the actual historical study.
 
 ## View the project
 
@@ -283,6 +307,8 @@ retries, and PostgreSQL deployment. These are future work, not implemented featu
 | `sql/` | Relational schema and window-function analysis |
 | `database.py` | SQLite/MySQL connection boundary |
 | `dashboard.py` | Streamlit response curves and event heatmaps |
+| `Dockerfile` / `compose.yaml` | Containerized MySQL, batch pipeline and dashboard |
+| `compose.real.yaml` | Optional supplied-archive study in a separate Compose project |
 | `results/real/` | Actual analytical summaries, session chart, and provenance |
 | `results/` | Separate synthetic execution fixture |
 | `study.py` | Yahoo/Investing source normalization and session-aware SQL analysis |

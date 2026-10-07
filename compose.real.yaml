@@ -1,0 +1,15 @@
+# Run as a separate project: -p economic-events-real -f compose.yaml -f compose.real.yaml
+services:
+  pipeline:
+    command: ["python", "container_runner.py", "real"]
+    volumes:
+      - type: bind
+        source: ${REAL_INPUT_DIR:-./data/container-input}
+        target: /inputs
+        read_only: true
+        bind:
+          create_host_path: false
+    environment:
+      EVENT_TIMEZONE: ${EVENT_TIMEZONE:?Declare the calendar archive timezone (UTC for this snapshot)}
+      STUDY_START: ${STUDY_START:-2024-10-08}
+      STUDY_END: ${STUDY_END:-2024-12-30}

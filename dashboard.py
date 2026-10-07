@@ -1,6 +1,7 @@
 """Run after python pipeline.py demo: streamlit run dashboard.py."""
 from pathlib import Path
 import math
+import os
 import altair as alt
 import pandas as pd
 import streamlit as st
@@ -9,7 +10,7 @@ from study import metadata, session_responses
 
 st.title('Economic events across global cash equity sessions')
 st.caption('How do open markets respond, and what is observed when closed markets reopen?')
-default_db = 'data/real_cash.db' if Path('data/real_cash.db').is_file() else 'data/market_events.db'
+default_db = os.environ.get('PIPELINE_DB') or ('data/real_cash.db' if Path('data/real_cash.db').is_file() else 'data/market_events.db')
 db = st.text_input('Database path', default_db)
 if db != 'mysql' and not Path(db).is_file():
     st.info('Create a demo database with: python pipeline.py demo')
