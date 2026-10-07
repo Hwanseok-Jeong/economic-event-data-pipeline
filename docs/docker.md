@@ -30,6 +30,7 @@ docker compose cp pipeline:/app/outputs ./outputs/docker
 docker compose down
 ```
 
+Create the host `outputs/` directory before exporting if it does not yet exist.
 The demo creates 288 prices, 3 events and 216 response records. Repeated ingestion
 keeps prices/events unique and appends an audit run. The smoke check verifies SQL
 returns, report records and actual Streamlit script rendering against MySQL, rather
@@ -106,10 +107,10 @@ inside the runner; no connection URL is printed. Existing database volumes retai
 the credentials with which they were initialized, so editing `.env` alone does
 not rotate a database password.
 
-This configuration is prepared for execution on a Docker-capable Linux host; it
-has not yet been deployed to AWS. A localhost-only dashboard can be viewed over
-an SSH tunnel after deployment. Public HTTPS, authentication, cloud access roles,
-backup policy and scheduling remain future deployment work.
+This configuration was verified on an AWS EC2 Linux host on 2026-10-07; see the
+[AWS verification record](aws-verification.md). A localhost-only dashboard can
+be viewed over an SSH tunnel after deployment. Public HTTPS, authentication,
+cloud access roles, backup policy and scheduling remain future deployment work.
 
 Docker lifecycle and dependency conditions follow the [Compose startup-order
 documentation](https://docs.docker.com/compose/how-tos/startup-order/).

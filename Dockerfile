@@ -11,6 +11,7 @@ COPY pipeline.py database.py study.py dashboard.py surprise_analysis.py \
      container_runner.py docker_smoke.py ./
 COPY sql/ ./sql/
 COPY tests/ ./tests/
+COPY deploy/ ./deploy/
 COPY results/ ./results/
 COPY docs/presentation_public.pdf docs/presentation_synthetic.pdf ./docs/
 RUN mkdir -p outputs data && chown -R pipeline:pipeline /app

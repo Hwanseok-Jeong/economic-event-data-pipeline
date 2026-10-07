@@ -37,6 +37,11 @@ jobs:
       - run: pip install 'exchange-calendars>=4.5,<5'
       - run: python -m unittest discover -s tests -v
       - run: python pipeline.py demo
+      - name: Validate offline AWS deployment template and shell scripts
+        run: |
+          python deploy/aws_ec2.py template
+          bash -n deploy/bootstrap.sh
+          bash -n deploy/verify_server.sh
   mysql:
     runs-on: ubuntu-latest
     services:

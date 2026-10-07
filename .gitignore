@@ -29,6 +29,10 @@
 !/container_runner.py
 !/docker_smoke.py
 !/requirements-docker.txt
+!/deploy/
+deploy/*.local.json
+deploy/*.pem
+deploy/*.key
 __pycache__/
 *.pyc
 .env

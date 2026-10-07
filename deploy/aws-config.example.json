@@ -1,0 +1,14 @@
+{
+  "_instructions": "Copy to aws-config.local.json and fill these public resource settings locally. Never put passwords, access keys or account email here.",
+  "profile": "economic-events",
+  "region": "eu-west-1",
+  "stack_name": "economic-events-validation",
+  "image_id": "",
+  "vpc_id": "",
+  "subnet_id": "",
+  "key_name": "",
+  "ssh_cidr": "",
+  "instance_type": "t3.small",
+  "repository_ref": "0b2b67b962c9d088b84f525b16c783972f961057",
+  "stop_after_minutes": 120
+}

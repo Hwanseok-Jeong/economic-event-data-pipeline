@@ -25,5 +25,9 @@
 !docs/
 !docs/presentation_public.pdf
 !docs/presentation_synthetic.pdf
+!deploy/
+!deploy/aws_ec2.py
+!deploy/bootstrap.sh
+!deploy/verify_server.sh
 **/__pycache__/**
 **/*.pyc

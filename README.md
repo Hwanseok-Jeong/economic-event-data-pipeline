@@ -19,8 +19,9 @@ and reopening waits are part of the analysis rather than discarded details.
 The project demonstrates data contracts, UTC normalization, relational modeling,
 transactional upserts, ingestion audit records, SQL window functions, and automated
 checks. Docker Compose packages the batch pipeline, MySQL and dashboard for local
-execution; it does not claim a completed cloud or production deployment,
-large-scale processing, or profitable trading performance.
+execution and a verified single-host AWS EC2 run. This is a small batch study;
+ongoing production operation, large-scale processing and trading performance
+are outside its scope.
 
 ```mermaid
 flowchart LR
@@ -42,6 +43,13 @@ Open **http://localhost:8501**. This starts MySQL, loads the **synthetic offline
 demo**, then launches Streamlit. Database and report volumes survive container
 restarts. [Docker guide](docs/docker.md) covers checks, logs, report export and a
 separate read-only input configuration for the actual historical study.
+
+An [optional AWS EC2 extension](deploy/README.md) supplies account-free deployment
+settings, a generated CloudFormation template, Free-plan preflight checks and
+server validation scripts. **Demo and actual historical-data runs passed on AWS
+EC2 on 2026-10-07**, including dashboard rendering and restart persistence.
+See the [verification record](docs/aws-verification.md). This was a temporary
+validation deployment, not a permanent public service.
 
 ## View the project
 
